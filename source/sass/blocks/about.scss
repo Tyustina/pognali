@@ -10,16 +10,43 @@
         grid-template-columns: 1fr 1fr;
         gap: 30px;
         color: $color-default-white;
+
+        @include vp-1023 {
+            position: relative;
+            grid-template-columns: 1fr;
+            gap: 0;
+            z-index: 1;
+        }
     }
 
     &__img {
-        
         margin-top: auto;
 
-        img {
+        picture:first-child img {
             height: 100%;
             object-fit: cover;
             object-position: bottom center;
+
+            @include vp-1023 {
+                display: none;
+            }
+        }
+
+        picture:last-child img {
+            display: none;
+
+            @include vp-1023 {
+                display: block;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 0;
+                z-index: 0;
+            }
+
+            @include vp-767 {
+                display: none;
+            }
         }
     }
 
@@ -30,6 +57,11 @@
         font-variant: all-small-caps;
         margin: 0;
         margin-bottom: 19px;
+
+        @include vp-767 {
+            font-size: 50px;
+            line-height: 50px;
+        }
     }
 
     p {
@@ -38,6 +70,16 @@
         line-height: 137%;
         margin: 0;
         margin-bottom: 18px;
+
+        @include vp-1023 {
+            width: 60%;
+        }
+
+        @include vp-767 {
+            width: 100%;
+            font-size: 14px;
+            line-height: 157%;
+        }
     }
 
     p:last-of-type {
@@ -47,11 +89,26 @@
         font-size: 21px;
         line-height: 119%;
         margin-top: 58px;
+
+        @include vp-1023 {
+            width: 49%;
+        }
+
+        @include vp-767 {
+            width: 100%;
+            font-size: 14px;
+            line-height: 157%;
+        }
     }
 
     button {
         margin-top: 137px;
         margin-bottom: 163px;
+
+        @include vp-767 {
+            margin-top: 50px;
+            gap: 45px;
+        }
     }
 
 }

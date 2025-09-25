@@ -7,12 +7,11 @@
     padding-bottom: 85px;
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
-    overflow: hidden;
     margin: 0 auto;
     outline: 1px solid red;
     //parallax
     perspective: 1px;
-    overflow-y: auto;
+
 
     &__img-bg {
         // position: absolute;
@@ -78,6 +77,11 @@
         @include vp-1023 {
             font-size: 60px;
         }
+
+        @include vp-767 {
+            font-size: 36px;
+            line-height: 111%;
+        }
     }
 
     &__card-list {
@@ -92,6 +96,12 @@
             grid-template-columns: 1fr 1fr;
             grid-template-rows: auto;
         }
+
+        @include vp-767 {
+            width: 270px;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(4, 1fr);
+        }
     }
 
     &__card {
@@ -105,16 +115,35 @@
         border-radius: 30px;
         opacity: 0;
         transform: translateX(100vw);
-        transition: transform 0.6s ease-in;
+        transition: transform 0.3s ease;
 
         @include vp-1023 {
             padding-left: 33px;
             padding-top: 31px;
             padding-bottom: 21px;
         }
+
+        @include vp-767 {
+            grid-column: 1/-1;
+            grid-row: unset;
+            padding-left: 24px;
+            padding-top: 22px;
+            padding-right: 19px;
+            border-radius: 10px;
+            transform: translateY(100vw);
+            transition: transform 0.3s ease-in-out;
+
+
+        }
+
         &.animate {
             opacity: 1;
             transform: translateX(0);
+
+            @include vp-767 {
+                transform: translateY(0);
+  
+            }
         }
 
         &:not(:first-child) {
@@ -135,10 +164,16 @@
                 grid-row: 1/2;
                 border-bottom-left-radius: 0;
             }
+
+            @include vp-767 {
+                grid-row: 1/5;
+                border-radius: 10px;
+            }
         }
 
         &:nth-child(2) {
             grid-column: 2/-1;
+            grid-row: 1/2;
             background-color: $color-jordy-blue;
 
             @include vp-1023 {
@@ -147,10 +182,17 @@
                 border-bottom-left-radius: 0;
                 border-bottom-right-radius: 0;
             }
+
+            @include vp-767 {
+                grid-column: 1/-1;
+                grid-row: 2/5;
+                border-radius: 10px;
+            }
         }
 
         &:nth-child(3) {
             grid-column: 3/-1;
+            grid-row: 1/2;
             background-color: $color-pale-cornflower-blue;
 
             @include vp-1023 {
@@ -158,10 +200,17 @@
                 grid-row: 2/3;
                 border-top-left-radius: 0;
             }
+
+            @include vp-767 {
+                grid-column: 1/-1;
+                grid-row: 3/5;
+                border-radius: 10px;
+            }
         }
 
         &:nth-child(4) {
             grid-column: 4/-1;
+            grid-row: 1/2;
             background-color: $color-patterns-blue;
 
             @include vp-1023 {
@@ -169,6 +218,12 @@
                 grid-row: 2/3;
                 border-top-right-radius: 0;
                 border-top-left-radius: 0;
+            }
+
+            @include vp-767 {
+                grid-column: 1/-1;
+                grid-row: 4/5;
+                border-radius: 10px;
             }
         }
     }
@@ -183,6 +238,13 @@
             flex-direction: column-reverse;
             gap: 12px;
         }
+
+        @include vp-767 {
+            min-width: unset;
+            max-width: unset;
+            width: 100%;
+            flex-direction: row-reverse;
+        }
     }
 
     &__card-wrapper p {
@@ -194,6 +256,11 @@
 
         @include vp-1023 {
             font-size: 24px;
+        }
+
+        @include vp-767 {
+            font-size: 18px;
+            line-height: 100%;
         }
     }
 
@@ -208,6 +275,12 @@
         @include vp-1023 {
             font-size: 30px;
             margin: 0;
+        }
+
+        @include vp-767 {
+            font-size: 18px;
+            line-height: 100%;
+            margin-left: auto;
         }
     }
 
