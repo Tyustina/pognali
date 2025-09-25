@@ -1,0 +1,121 @@
+.nav {
+    width: 100%;
+    @include vp-1023 {
+        display: flex;
+        align-items: center;
+    }
+    &--closed &__container {
+        @include vp-1023 {
+            display: none;
+        }
+    }
+
+    &--opened &__container {
+        @include vp-1023 {
+            display: flex;
+        }
+    }
+
+    button {
+        display: none;
+
+        @include vp-1023 {
+            position: relative;
+            display: flex;
+            width: 25px;
+            height: 25px;
+            border: none;
+            background-color: transparent;
+
+            &::before {
+                position: absolute;
+                content: "";
+                display: block;
+                width: 25px;
+                height: 3px;
+                top: calc(50%);
+                transform: translateY(50%);
+                left: 0;
+                border-radius: 2px;
+                background-color: $color-default-white;
+            }
+
+            &::after {
+                position: absolute;
+                content: "";
+                display: block;
+                width: 25px;
+                height: 3px;
+                top: calc(50% - 4px);
+                transform: translateY(-50%);
+                left: 0;
+                border-radius: 2px;
+                background-color: $color-default-white;
+            }
+        }
+    }
+    &__container {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    &__site-list {
+        ul {
+            @include list-reset;
+            position: relative;
+            display: flex;
+            gap: 18px;
+            padding-left: 105px;
+
+            &::before {
+                position: absolute;
+                content: "";
+                display: block;
+                width: 60px;
+                height: 2px;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 0;
+                background-color: $color-default-white;
+
+                @include vp-1023 {
+                    display: none;
+                }
+            }
+        }
+
+        a {
+            position: relative;
+            display: inline-block;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 100%;
+            text-transform: uppercase;
+            color: $color-default-white;
+            white-space: nowrap;
+            overflow: hidden;
+            padding: 0 14px;
+        }
+
+        a span {
+            display: inline-block;
+            position: relative;
+            transition: transform 0.3s ease 0s;
+        }
+
+        a span:before {
+            content: attr(data-hover);
+            font-weight: 700;
+            position: absolute;
+            top: 100%;
+            transform: translate3d(0px, 0px, 0px);
+        }
+
+        a:hover span,
+        a:focus span {
+            transform: translateY(-100%);
+            color: $color-jordy-blue;
+        }
+    }
+}

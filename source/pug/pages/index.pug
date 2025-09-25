@@ -11,8 +11,12 @@ block variables
 
 block main
   main
+    include ../components/blocks/hero 
+    include ../components/blocks/about 
+    include ../components/blocks/direction 
+
     //- на странице запрещен "голый" код
     //- все блоки вставляются из папки pug/components/blocks
-    +intro()
+
 
 block modals

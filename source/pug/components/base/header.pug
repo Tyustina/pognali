@@ -6,31 +6,47 @@ mixin header(headerMods, currentUrl)
         text: "Главная"
       },
       {
-        href: "#",
+        href: "catalog.html",
         text: "Страница 2"
-      },
-      {
-        href: "#",
-        text: "Страница 3"
       },
     ]
 
   header.header(class=headerMods)
     .container
       if(currentUrl === "index.html")
-        //- lighthouse снимает 10 баллов SEO за <a> без href
-        span.header__logo Логотип
+        .logo
+          +picture("content","logo-full-bg","png", 187, 50, "Логотип")
+          +icon("logo-mobile", 128, 20)
       else
-        a.header__logo(href="index.html", aria-label="Переход на главную") Логотип
-      nav.main-nav
-        button.main-nav__toggle.btn-reset(type="button", aria-label="Переключатель отображения меню", aria-pressed="false")
-          +icon("icon-burger", 20, 20)
-        .main-nav__wrapper
-          ul.main-nav__list
-            each link in headerLinks
-              - const activeState = currentUrl === link.href
-              li.main-nav__item
-                if(activeState)
-                  span.main-nav__link.is-active= link.text
-                else
-                  a.main-nav__link(href=link.href)= link.text
+        .logo
+          a(href="index.html")
+            +picture("content","logo-full-bg","png", 187, 50, "Логотип")
+            +icon("logo-mobile", 128, 20)
+
+      nav.nav.nav--closed
+        button(type="button" aria-label="Открыть меню")
+          span
+          span
+        .nav__container
+          .nav__site-list
+            ul 
+              li
+                a(href="#") 
+                  span(data-hover="О сервисе") О сервисе
+              li
+                a(href="#") 
+                  span(data-hover="Направления") Направления
+              li
+                a(href="catalog.html") 
+                  span(data-hover="Попутчики") Попутчики
+
+          .socials
+            ul 
+              li
+                a(href="tel:+78005558628" aria-label="Позвонить")
+                  +icon("icon-call", 18, 18)
+                span 8 800 555-86-28
+              li
+                a(href="mailto:mail@htmlacademy.ru" aria-label="Написать письмо")
+                  +icon("icon-mail", 18, 18)
+                span mail@htmlacademy.ru

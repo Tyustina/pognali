@@ -22,7 +22,7 @@ block main
   main
     .sitemap
       .container
-        img(src="https://via.placeholder.com/300x150", width="300", alt="Логотип проекта")
+        +picture("content","logo-full","png", 200, 50, "Логотип")
         h1 Список страниц
         ol
           each page in pages
