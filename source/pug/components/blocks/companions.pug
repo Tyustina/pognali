@@ -1,0 +1,54 @@
+section.companions
+    .companions__container.container
+        .companions__content-wrapper
+            h2 Попутчики
+            p Все мы индивидуальны и у каждого свой взгляд на идеальный отдых. 
+            p Одному нужен пляж и коктейль, а другому маршрут для хайкинга. 
+            p Теперь можно легко найти единомышленников!
+            button(type="button").btn
+                span Подробнее
+                +icon("arrow", 14,14)
+        .companions__card-wrapper 
+            ul.companions__card-list
+                li.card.card--free 
+                    .card__img-wrapper 
+                        +picture("content", "user-1", "jpg", 285,286,"")
+                    .card__info 
+                        h3 Таня Фирсова
+                        ul.card__hashtags 
+                            li #ЗОЖ 
+                            li #ПП 
+                            li #Фитнес 
+                            li #пляж
+                            li #авокадо
+                            li #смузи
+                        ul.card__types 
+                            li 
+                                +icon("icon-plane",24,22)
+                            li
+                                +icon("icon-bus",19,20)
+                            li
+                                +icon("icon-plane",26,25)
+                            li
+                                +icon("icon-plane",23,24)
+                li.card.card__busy 
+                    .card__img-wrapper 
+                        +picture("content", "user-2", "jpg", 285,285,"")
+                    h3 Петя Демин
+                    ul.card__hashtags 
+                        li #бургер 
+                        li #бар 
+                        li #футбол
+                        li #концерт
+                        li #крафт
+                    ul.card__types 
+                        li 
+                            +icon("icon-plane",24,22)
+                        li 
+                            +icon("icon-bus",19,20)
+                        li 
+                            +icon("icon-plane",26,25)
+                        li
+                            +icon("icon-plane",23,24)
+
+

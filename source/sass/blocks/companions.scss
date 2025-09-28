@@ -1,0 +1,16 @@
+.companions {
+    &__container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    &__card-wrapper {
+        background-color: $color-blue-zodiac;
+        border-bottom-left-radius: 50px;
+        border-bottom-right-radius: 50px;
+    }
+
+    &__card-list {
+        @include list-reset;
+        display: flex;
+    }
+}

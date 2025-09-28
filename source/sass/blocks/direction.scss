@@ -1,0 +1,116 @@
+.direction {
+    &__container {
+        display: grid;
+        grid-template-columns: 749px 1fr;
+        gap: 120px;
+        padding: 0;
+    }
+
+    &__slide-wrapper {
+        background-color: $color-solitude;
+        padding-top: 160px;
+        padding-bottom: 160px;
+        border-bottom-left-radius: 50px;
+        border-bottom-right-radius: 50px;
+    }
+
+    &__slide-list {
+        @include list-reset;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    &__item {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        border-radius: 20px;
+        background-color: $color-default-white;
+        overflow: hidden;
+        box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.3);
+
+    }
+
+    &__text-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 23px;
+        padding-top: 24px;
+        padding-left: 33px;
+        padding-bottom: 21px;
+    }
+
+    &__item-text {
+        h3 {
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 100%;
+            color: $color-default-black;
+            margin: 0;
+            margin-bottom: 4px;
+        }
+
+        p {
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 100%;
+            color: $color-charcoal;
+            margin: 0;
+            opacity: 0.3;
+        }
+    }
+
+    &__count {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+
+        span {
+            font-size: 24px;
+            line-height: 100%;
+            color: $color-default-blue;
+            opacity: 0.3;
+        }
+    }
+
+    &__img {
+        position: relative;
+
+        picture:first-child img{
+            position: absolute;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+
+        picture:last-child img{
+            position: absolute;
+            left: -20%;
+            top: 15%;
+        }
+    }
+
+    &__content-wrapper {
+        h2 {
+            font-weight: 700;
+            font-size: 75px;
+            line-height: 100%;
+            font-variant: all-small-caps;
+            margin: 0;
+            margin-bottom: 33px;
+        }
+
+        p {
+            font-weight: 500;
+            font-size: 23px;
+            line-height: 143%;
+            margin: 0;
+            color: $color-charcoal;
+        }
+
+        button {
+            margin-top: 155px;
+        }
+    }
+}

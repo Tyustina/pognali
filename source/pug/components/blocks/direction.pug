@@ -1,20 +1,45 @@
 section.direction
-    .direction__slide-wrapper
-        ul.direction__slide-list
-            li.direction__item
-                .direction__item-text
-                    h3 Таиланд
-                    p Джунгли зовут!
-                    +icon('direction-icon',20,20)
-                    span 
-    .direction__text-wrapper
-        h2 Направления
-        p 
-            | Мы не продаем туры и ничего не рекламируем. 
-            | Люди сами пишут о странах, куда хотели бы отправиться и чем можно там заняться.
-        button(type="button").btn
-            span Подробнее
-            +icon("arrow", 14,14)
-
-  
-
+    .direction__container.container
+        .direction__slide-wrapper.container
+            ul.direction__slide-list
+                li.direction__item
+                    .direction__text-wrapper 
+                        .direction__item-text
+                            h3 Таиланд
+                            p Джунгли зовут!
+                        .direction__count
+                            +icon('direction-icon',20,20)
+                            span 18321
+                    .direction__img
+                        +picture("content", "thailand-img","png",202,152,"")
+                        +picture("content", "thailand-flag","png",76,47,"")
+                li.direction__item
+                    .direction__text-wrapper 
+                        .direction__item-text
+                            h3 Франция
+                            p Трэ бьен, манифик!
+                        .direction__count
+                            +icon('direction-icon',20,20)
+                            span 12518
+                    .direction__img
+                        +picture("content", "france-img","png",202,152,"")
+                        +picture("content", "france-flag","png",70,47,"")
+                li.direction__item
+                    .direction__text-wrapper 
+                        .direction__item-text
+                            h3 Чехия
+                            p Закоулки старой Европы
+                        .direction__count
+                            +icon('direction-icon',20,20)
+                            span 5326
+                    .direction__img
+                        +picture("content", "czech-img","png",202,152,"")
+                        +picture("content", "czech-flag","png",70,47,"")
+        .direction__content-wrapper
+            h2 Направления
+            p 
+                | Мы не продаем туры и ничего не рекламируем. 
+                | Люди сами пишут о странах, куда хотели бы отправиться и чем можно там заняться.
+            button(type="button").btn
+                span Подробнее
+                +icon("arrow", 14,14)
