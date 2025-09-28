@@ -1,6 +1,6 @@
 section.companions
     .companions__container.container
-        .companions__content-wrapper
+        .companions__content-wrapper.container
             h2 Попутчики
             p Все мы индивидуальны и у каждого свой взгляд на идеальный отдых. 
             p Одному нужен пляж и коктейль, а другому маршрут для хайкинга. 
@@ -10,7 +10,7 @@ section.companions
                 +icon("arrow", 14,14)
         .companions__card-wrapper 
             ul.companions__card-list
-                li.card.card--free 
+                li.companions__card-item.card.card--offline 
                     .card__img-wrapper 
                         +picture("content", "user-1", "jpg", 285,286,"")
                     .card__info 
@@ -22,7 +22,17 @@ section.companions
                             li #пляж
                             li #авокадо
                             li #смузи
-                        ul.card__types 
+                        ul.card__countries 
+                            li 
+                                +picture("content","sri-lanka-flag","png",35,24,"")
+                                p шри-ланка
+                            li 
+                                +picture("content","thailand-flag","png",35,24,"")
+                                p Таиланд
+                            li 
+                                +picture("content","seychelles-flag","png",35,24,"")
+                                p сейшелы
+                        ul.card__transport
                             li 
                                 +icon("icon-plane",24,22)
                             li
@@ -31,24 +41,33 @@ section.companions
                                 +icon("icon-plane",26,25)
                             li
                                 +icon("icon-plane",23,24)
-                li.card.card__busy 
+                        
+                li.companions__card-item.card.card--online
                     .card__img-wrapper 
                         +picture("content", "user-2", "jpg", 285,285,"")
-                    h3 Петя Демин
-                    ul.card__hashtags 
-                        li #бургер 
-                        li #бар 
-                        li #футбол
-                        li #концерт
-                        li #крафт
-                    ul.card__types 
-                        li 
-                            +icon("icon-plane",24,22)
-                        li 
-                            +icon("icon-bus",19,20)
-                        li 
-                            +icon("icon-plane",26,25)
-                        li
-                            +icon("icon-plane",23,24)
+                    .card__info 
+                        h3 Петя Демин
+                        ul.card__hashtags 
+                            li #бургер 
+                            li #бар 
+                            li #футбол
+                            li #концерт
+                            li #крафт
+                        ul.card__countries 
+                            li 
+                                +picture("content","belgium-flag","png",35,24,"")
+                                p Бельгия
+                            li 
+                                +picture("content","czech-flag","png",35,24,"")
+                                p Чехия
+                        ul.card__transport 
+                            li 
+                                +icon("icon-plane",24,22)
+                            li 
+                                +icon("icon-bus",19,20)
+                            li 
+                                +icon("icon-plane",26,25)
+                            li
+                                +icon("icon-plane",23,24)
 
 

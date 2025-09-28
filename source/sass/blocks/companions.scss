@@ -2,15 +2,63 @@
     &__container {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        align-items: center;
+        padding: 0;
     }
+
+    &__content-wrapper {
+        h2 {
+            font-weight: 700;
+            font-size: 95px;
+            line-height: 100%;
+            font-variant: all-small-caps;
+            color: $color-midnight-express;
+            margin: 0;
+            margin-bottom: 36px;
+        }
+
+        p {
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 137%;
+            color: $color-midnight-express;
+            margin: 0;
+
+        }
+
+        p:last-of-type {
+            font-family: "Roboto Condensed";
+            font-weight: 300;
+            font-size: 22px;
+            line-height: 109%;
+            color: $color-midnight-express;
+            margin-top: 53px;
+        }
+
+        button {
+            margin-top: 109px;
+        }
+    }
+
     &__card-wrapper {
         background-color: $color-blue-zodiac;
         border-bottom-left-radius: 50px;
         border-bottom-right-radius: 50px;
+        padding-top: 133px;
+        padding-bottom: 188px;
+        padding-left: 74px;
+        padding-right: 74px;
     }
 
     &__card-list {
         @include list-reset;
         display: flex;
+        gap: 30px;
     }
+
+    &__card-list &__card-item:nth-child(2) {
+        position: relative;
+        top: 65px;
+    }
+
 }
