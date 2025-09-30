@@ -67,6 +67,7 @@
             display: flex;
             gap: 18px;
             padding-left: 105px;
+            padding-top: 12px;
 
             &::before {
                 position: absolute;
@@ -74,7 +75,7 @@
                 display: block;
                 width: 60px;
                 height: 2px;
-                top: 50%;
+                top: 55%;
                 transform: translateY(-50%);
                 left: 0;
                 background-color: $color-default-white;
@@ -95,7 +96,7 @@
             color: $color-default-white;
             white-space: nowrap;
             overflow: hidden;
-            padding: 0 14px;
+            padding: 0;
         }
 
         a span {

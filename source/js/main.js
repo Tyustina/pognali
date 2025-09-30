@@ -4,6 +4,7 @@ import {Form} from './modules/form-validate/form';
 import {CustomSelect} from './modules/select/custom-select';
 import {uploadFile, uploadImageDrop} from './modules/input-file/init-upload';
 import './modules/animations.js'
+import './modules/map.js'
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {

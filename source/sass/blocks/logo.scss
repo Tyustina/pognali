@@ -1,8 +1,17 @@
 .logo {
     position: relative;
     display: flex;
-    width: 200px;
+    width: 225px;
     height: min-content;
+
+    &--light svg {
+        color: $color-default-white;
+
+    }
+
+    &--dark svg {
+        color: black;
+    }
 
     img {
         @include vp-767 {
@@ -12,7 +21,7 @@
 
     svg {
         position: absolute;
-        right: 0;
+        left: 39%;
         top: 50%;
         transform: translateY(-50%);
 

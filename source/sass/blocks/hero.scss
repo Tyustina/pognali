@@ -3,23 +3,16 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
-    padding-top: 197px;
-    padding-bottom: 85px;
+    padding-top: 189px;
+    padding-bottom: 115px;
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
     margin: 0 auto;
     outline: 1px solid red;
-    //parallax
-    perspective: 1px;
-
+    z-index: 10;
 
     &__img-bg {
-        // position: absolute;
-        // height: 100%;
-        // top: 0;
-        // left: 0;
         z-index: -1;
-        //parralax
         position: absolute;
         inset: 0;
         transform: translateZ(0);
@@ -35,7 +28,7 @@
     &__img {
         position: absolute;
         bottom: 0px;
-        right: 60px;
+        right: 276px;
         // transition: transform 1s ease-in-out;
         // animation: slideImg 1s ease forwards ;
 
@@ -61,12 +54,13 @@
 
     &__container {
         display: grid;
-        gap: 129px;
+        gap: 120px;
 
     }
 
     &__slogan {
         padding: 0;
+        padding-left: 12px;
         margin: 0;
         font-weight: 700;
         font-size: 70px;
@@ -107,7 +101,7 @@
     &__card {
         display: flex;
         flex-direction: row-reverse;
-        justify-content: flex-end;
+        margin-right: auto;
         padding-right: 55px;
         padding-left: 36px;
         padding-bottom: 30px;

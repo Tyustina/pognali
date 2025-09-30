@@ -1,0 +1,26 @@
+section.interested 
+    .interested__container.container 
+        h2 Заинтересовались?
+        p Зарегистрируйтесь, это быстро и бесплатно! 
+        p Уже зарегистрированы? Тогда скорее 
+            a(hreff="#") авторизуйтесь.
+        .interested__input-wrapper 
+            input(type="mail")
+            button.btn(type="button") 
+                span Регистрация
+                +icon("arrow", 14,14)
+        p Остались вопросы? Мы с радостью на них ответим!
+        .interested__contacts 
+            ul 
+                li
+                    a(href="#")
+                        span
+                            +icon("icon-telephone",36,34)
+                        h3 8 800 555-86-28
+                li 
+                    a(href="mailto:mail@htmlacademy.ru")
+                        span 
+                            +icon("icon-mail-2",36,25)
+                        h3 mail@htmlacademy.ru
+
+

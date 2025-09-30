@@ -1,20 +1,25 @@
 .companions {
+    position: relative;
+    top: -68px;
+    z-index: 7;
     &__container {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        gap: 20px;
         align-items: center;
         padding: 0;
     }
 
     &__content-wrapper {
+        margin-left: 10px;
         h2 {
             font-weight: 700;
             font-size: 95px;
-            line-height: 100%;
+            line-height: 69%;
             font-variant: all-small-caps;
             color: $color-midnight-express;
             margin: 0;
-            margin-bottom: 36px;
+            margin-bottom: 35px;
         }
 
         p {
@@ -37,6 +42,7 @@
 
         button {
             margin-top: 109px;
+            gap: 60px;
         }
     }
 
@@ -44,7 +50,7 @@
         background-color: $color-blue-zodiac;
         border-bottom-left-radius: 50px;
         border-bottom-right-radius: 50px;
-        padding-top: 133px;
+        padding-top: 130px;
         padding-bottom: 188px;
         padding-left: 74px;
         padding-right: 74px;

@@ -1,12 +1,12 @@
 .header {
   position: absolute;
-  padding: 46px 0;
+  padding: 47px 0;
   align-items: center;
   width: 100%;
   z-index: 10;
 
-  .container {
+  &__container {
     display: flex;
-    gap: 40px;
+    gap: 55px;
   }
 }

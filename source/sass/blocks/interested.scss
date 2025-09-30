@@ -1,0 +1,92 @@
+.interested {
+    position: relative;
+    z-index: 5;
+    padding-top: 175px;
+    padding-bottom: 103px;
+    background-color: $color-blue-zodiac;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+
+    &__container {
+        color: $color-default-white;
+    }
+
+    h2 {
+        font-weight: 700;
+        font-size: 95px;
+        line-height: 100%;
+        margin: 0;
+        margin-bottom: 36px;
+        text-align: center;
+    }
+
+    p {
+        width: 52%;
+        font-weight: 300;
+        font-size: 28px;
+        line-height: 111%;
+        text-align: center;
+        margin: 0 auto;
+
+        a {
+            text-decoration: underline;
+            text-decoration-skip-ink: none;
+            color: $color-pale-cornflower-blue;
+            cursor: pointer;
+        }
+    }
+
+    &__input-wrapper {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr max-content;
+        margin-top: 47px;
+        margin-bottom: 70px;
+
+        input {
+            border-color: transparent;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+
+            // width: 100%;
+            // height: 100%;
+        }
+
+        button {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+    }
+
+    &__contacts {
+        margin-top: 42px;
+
+        ul {
+            @include list-reset;
+            display: grid;
+            justify-content: center;
+            grid-template-columns: max-content max-content;
+            gap: 105px;
+        }
+
+        a {
+            display: flex;
+            column-gap: 31px;
+            font-weight: 700;
+            font-size: 28px;
+            line-height: 100%;
+            text-transform: uppercase;
+            color: $color-default-white;
+        }
+
+        span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 90px;
+            height: 90px;
+            border-radius: 100%;
+            background-color: $color-midnight-express;
+        }
+    }
+}

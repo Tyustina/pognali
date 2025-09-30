@@ -12,13 +12,13 @@ mixin header(headerMods, currentUrl)
     ]
 
   header.header(class=headerMods)
-    .container
+    .header__container.container
       if(currentUrl === "index.html")
-        .logo
+        .logo.logo--light
           +picture("content","logo-full-bg","png", 187, 50, "Логотип")
           +icon("logo-mobile", 128, 20)
       else
-        .logo
+        .logo.logo--light
           a(href="index.html")
             +picture("content","logo-full-bg","png", 187, 50, "Логотип")
             +icon("logo-mobile", 128, 20)

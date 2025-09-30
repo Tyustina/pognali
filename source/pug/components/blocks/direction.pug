@@ -1,5 +1,5 @@
 section.direction
-    .direction__container.container
+    .direction__container
         .direction__slide-wrapper.container
             ul.direction__slide-list
                 li.direction__item
@@ -35,11 +35,10 @@ section.direction
                     .direction__img
                         +picture("content", "czech-img","png",202,152,"")
                         +picture("content", "czech-flag","png",70,47,"")
-        .direction__content-wrapper
+        .direction__content-wrapper.container
             h2 Направления
-            p 
-                | Мы не продаем туры и ничего не рекламируем. 
-                | Люди сами пишут о странах, куда хотели бы отправиться и чем можно там заняться.
+            p Мы не продаем туры и ничего не рекламируем. 
+            p Люди сами пишут о странах, куда хотели бы отправиться и чем можно там заняться.
             button(type="button").btn
-                span Подробнее
+                span Показать все
                 +icon("arrow", 14,14)
