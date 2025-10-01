@@ -4,10 +4,17 @@
     padding-top: 148px;
     margin-top: -55px;
     padding-left: 12px;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 60px;
+    border-bottom-right-radius: 60px;
     z-index: 9;
-    
+
+    @include vp-1023 {
+        padding-left: 0;
+        padding-top: 250px;
+        padding-bottom: 80px;
+        margin-top: 0;
+    }
+
     &__container {
         display: grid;
         grid-template-columns: 50% 50%;
@@ -43,9 +50,9 @@
             @include vp-1023 {
                 display: block;
                 position: absolute;
-                top: 50%;
+                top: 56%;
                 transform: translateY(-50%);
-                right: 0;
+                right: 8px;
                 z-index: 0;
             }
 
@@ -63,6 +70,10 @@
         margin: 0;
         margin-bottom: 34px;
 
+        @include vp-1023 {
+            margin-bottom: 42px;
+        }
+
         @include vp-767 {
             font-size: 50px;
             line-height: 50px;
@@ -78,6 +89,7 @@
 
         @include vp-1023 {
             width: 60%;
+            margin-left: 8px;
         }
 
         @include vp-767 {
@@ -88,15 +100,17 @@
     }
 
     p:last-of-type {
-        width: 75%;
-        font-family: "Roboto";
+        width: 80%;
+        font-family: "Roboto Condensed";
         font-weight: 200;
         font-size: 22px;
         line-height: 119%;
         margin-top: 58px;
 
         @include vp-1023 {
-            width: 49%;
+            width: 51%;
+            font-size: 21px;
+            margin-top: 102px;
         }
 
         @include vp-767 {
@@ -108,6 +122,12 @@
 
     button {
         margin-top: 116px;
+
+        @include vp-1023 {
+            margin-top: 130px;
+            margin-left: 6px;
+            gap: 72px;
+        }
         @include vp-767 {
             margin-top: 50px;
             gap: 45px;

@@ -1,14 +1,15 @@
-import {mobileVhFix} from './utils/mobile-vh-fix.js';
-import {initModals} from './modules/modals/init-modals';
-import {Form} from './modules/form-validate/form';
-import {CustomSelect} from './modules/select/custom-select';
-import {uploadFile, uploadImageDrop} from './modules/input-file/init-upload';
+import { mobileVhFix } from './utils/mobile-vh-fix.js';
+import { initModals } from './modules/modals/init-modals';
+import { Form } from './modules/form-validate/form';
+import { CustomSelect } from './modules/select/custom-select';
+import { uploadFile, uploadImageDrop } from './modules/input-file/init-upload';
 import './modules/animations.js'
 import './modules/map.js'
+import { checkWidth } from './modules/slider.js'
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
-
+  checkWidth();
   // Utils
   // ---------------------------------
 

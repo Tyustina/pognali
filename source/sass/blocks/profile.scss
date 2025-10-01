@@ -1,28 +1,34 @@
 .profile {
     position: relative;
     z-index: 6;
+
     &__container {
         display: grid;
-        grid-template-columns: 55% 45%;
-        padding-top: 70px;
+        grid-template-columns: 55.5% 44.5%;
+        padding-top: 30px;
         padding-bottom: 65px;
-        row-gap: 80px;
 
         h2 {
             grid-column: 1/-1;
             font-weight: 700;
             font-size: 95px;
-            line-height: 47%;
+            line-height: 100%;
             font-variant: all-small-caps;
             color: $color-midnight-express;
             margin: 0;
+            text-align: center;
+            margin-left: -38px;
+            margin-bottom: 80px;
         }
-    }
 
-    &__advantages {
         button {
+            grid-column: 1/-1;
+            margin-right: auto;
+            margin-top: -8px;
+            padding: 0;
+            padding-left: 12px;
             display: flex;
-            gap: 26px;
+            gap: 28px;
             justify-content: center;
             align-items: center;
             border: none;
@@ -48,6 +54,12 @@
         }
     }
 
+    &__advantages {
+        padding-top: 62px;
+        padding-left: 111px;
+        padding-bottom: 15px;
+    }
+
     &__advantages-list {
         @include list-reset;
         counter-reset: my-counter;
@@ -55,22 +67,27 @@
 
         li {
             position: relative;
-            font-weight: 400;
-            font-size: 28px;
-            line-height: 100%;
+            display: inline-flex;
             counter-increment: my-counter;
-            padding: 23px 0;
             border-top: 1px solid #e1e3e9;
             border-bottom: 1px solid #e1e3e9;
             border-spacing: 0;
-            margin-left: 70px;
+            display: block;
+            font-weight: 400;
+            padding: 23px 0;
+            font-size: 28px;
+            line-height: 30px;
+
         }
 
         li:before {
-            position: relative;
+            position: absolute;
+            display: flex;
             content: counter(my-counter);
             color: $color-default-white;
-            left: -52px;
+            left: -68px;
+            top: 50%;
+            transform: translateY(-50%);
             z-index: 1;
         }
 
@@ -79,23 +96,39 @@
             content: "";
             width: 72px;
             height: 70px;
-            left: -80px;
+            left: -97px;
             top: 50%;
             transform: translateY(-50%);
             border-radius: 50%;
-            background-color: $color-picton-blue;
             z-index: 0;
+        }
+
+        li:nth-child(3n+1):after {
+            background-color: $color-picton-blue;
+        }
+
+        li:nth-child(3n+2):after {
+            background-color: $color-jordy-blue;
+        }
+
+        li:nth-child(3n):after {
+            background-color: $color-pale-cornflower-blue;
         }
     }
 
     &__price {
         display: flex;
         align-items: center;
-        gap: 46px;
+        justify-content: space-between;
         border-radius: 20px;
         background-color: $color-blue-zodiac;
-        padding: 62px 47px 69px 49px;
+        padding: 45px 48px 88px 84px;
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+
+        img {
+            position: relative;
+            top: 18px;
+        }
     }
 
 

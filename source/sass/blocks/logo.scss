@@ -9,10 +9,6 @@
 
     }
 
-    &--dark svg {
-        color: black;
-    }
-
     img {
         @include vp-767 {
             display: none;
@@ -31,4 +27,10 @@
             transform: none;
         }
     }
+
+    &--dark svg {
+        color: black;
+        left: 31%;
+    }
+
 }
