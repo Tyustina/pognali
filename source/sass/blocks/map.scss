@@ -1,10 +1,15 @@
 .map {
-margin-top: -120px;
+    margin-top: -120px;
+
     #map {
         width: 100%;
         height: 598px;
         border: none;
         cursor: pointer;
+
+        @include vp-1023 {
+            height: 666px;
+        }
     }
 
     &__content {
@@ -26,6 +31,11 @@ margin-top: -120px;
         box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.25);
         z-index: 2;
 
+        @include vp-1023 {
+            padding: 118px 76px 84px 76px;
+            flex-direction: column;
+            row-gap: 44px;
+        }
 
         button {
             gap: 18px;
@@ -39,6 +49,10 @@ margin-top: -120px;
             span {
                 display: block;
             }
+
+            @include vp-1023 {
+                width: 100%;
+            }
         }
     }
 
@@ -49,6 +63,12 @@ margin-top: -120px;
         align-items: center;
         color: $color-catalina-blue;
 
+        @include vp-1023 {
+            justify-content: flex-start;
+            padding: 0;
+            gap: 26px;
+        }
+
         span {
             display: flex;
             justify-content: center;
@@ -57,6 +77,18 @@ margin-top: -120px;
             height: 90px;
             border-radius: 100%;
             background-color: $color-default-blue;
+
+            @include vp-1023 {
+                width: 68px;
+                height: 68px;
+            }
+
+            svg {
+                @include vp-1023 {
+                    width: 32px;
+                    height: 32px;
+                }
+            }
         }
 
         p {

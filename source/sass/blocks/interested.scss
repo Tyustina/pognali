@@ -1,15 +1,25 @@
 .interested {
     position: relative;
-    z-index: 5;
+    z-index: 4;
     padding-top: 150px;
     padding-bottom: 103px;
     background-color: $color-blue-zodiac;
     border-bottom-left-radius: 60px;
     border-bottom-right-radius: 60px;
 
+    @include vp-1023 {
+        padding-top: 136px;
+        padding-bottom: 56px;
+        margin-top: -50px;
+    }
+
     &__container {
         color: $color-default-white;
         padding: 0 134px;
+
+        @include vp-1023 {
+            padding: 0 24px;
+        }
     }
 
     h2 {
@@ -19,6 +29,13 @@
         margin: 0;
         margin-bottom: 20px;
         text-align: center;
+
+        @include vp-1023 {
+            margin-bottom: 44px;
+            font-size: 75px;
+            line-height: 60%;
+            font-variant: all-small-caps;
+        }
     }
 
     p {
@@ -29,9 +46,23 @@
         text-align: center;
         margin: 0 auto;
 
+        @include vp-1023 {
+            width: 100%;
+            font-size: 24px;
+            line-height: 133%;
+            text-align: center;
+            margin-left: -10px;
+        }
+
         &:last-of-type {
             width: 60%;
             letter-spacing: 0.01em;
+
+            @include vp-1023 {
+                width: 100%;
+                line-height: 125%;
+                margin-left: 0;
+            }
         }
 
         a {
@@ -49,13 +80,17 @@
         margin-top: 47px;
         margin-bottom: 70px;
 
+        @include vp-1023 {
+            margin-top: 70px;
+            margin-bottom: 78px;
+            padding: 0 53px;
+        }
+
         input {
             border-color: transparent;
             border-top-left-radius: 20px;
             border-bottom-left-radius: 20px;
             padding: 15px 32px;
-            // width: 100%;
-            // height: 100%;
         }
 
         button {
@@ -65,11 +100,31 @@
             gap: 96px;
             padding-top: 30px;
             padding-left: 42px;
+
+            @include vp-1023 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 80px;
+                height: 80px;
+                gap: 0;
+                padding: 0;
+            }
+
+            span {
+                @include vp-1023 {
+                    display: none;
+                }
+            }
         }
     }
 
     &__contacts {
         margin-top: 42px;
+        
+        @include vp-1023 {
+            margin-top: 26px;
+        }
 
         ul {
             @include list-reset;
@@ -79,6 +134,12 @@
             gap: 107px;
             margin: 0 auto;
             padding-left: 35px;
+
+            @include vp-1023 {
+                flex-direction: column;
+                gap: 0;
+                padding-left: 50px;
+            }
         }
 
         a {
@@ -86,6 +147,9 @@
             column-gap: 31px;
             align-items: center;
 
+            @include vp-1023 {
+                column-gap: 22px;
+            }
         }
 
         span {
@@ -96,6 +160,18 @@
             height: 90px;
             border-radius: 100%;
             background-color: $color-midnight-express;
+
+            @include vp-1023 {
+                width: 68px;
+                height: 68px;
+            }
+
+            svg {
+                @include vp-1023 {
+                    width: 32px;
+                    height: 35px;
+                }
+            }
         }
 
         h3 {

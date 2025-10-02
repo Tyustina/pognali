@@ -4,9 +4,15 @@
     width: 225px;
     height: min-content;
 
-    &--light svg {
-        color: $color-default-white;
+    &--light {
+        svg {
+            color: $color-default-white;
 
+            @include vp-1023 {
+                width: 106px;
+                height: 17px;
+            }
+        }
     }
 
     img {
