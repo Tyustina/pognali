@@ -13,7 +13,12 @@
   &__container {
     display: grid;
     grid-template-columns: 42% 58%;
+
+    @include vp-1023 {
+      grid-template-columns: 36% 64%
+    }
   }
+  
   &__links {
     @include list-reset;
     display: flex;

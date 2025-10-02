@@ -1,0 +1,33 @@
+.catalog-title {
+    background-color: $color-midnight-express;
+    border-bottom-left-radius: 60px;
+    border-bottom-right-radius: 60px;
+
+    &__container {
+        position: relative;
+        padding-top: 244px;
+        padding-bottom: 86px;
+
+        &::after {
+            position: absolute;
+            bottom: -5px;
+            left: 9vw;
+            content: "";
+            width: 288px;
+            height: 8px;
+            border-radius: 4px;
+            background-color: $color-picton-blue;
+        }
+
+    }
+
+    h1 {
+        font-weight: 700;
+        font-size: 60px;
+        line-height: 33%;
+        font-variant: all-small-caps;
+        color: $color-default-white;
+        margin: 0;
+        margin-left: 64px;
+    }
+}

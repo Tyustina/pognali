@@ -1,0 +1,50 @@
+.countries-filter {
+    &__buttons {
+        display: flex;
+
+        ul {
+            @include list-reset;
+            display: flex;
+        }
+
+        button {
+            border: none;
+            background-color: transparent;
+            font-size: 20px;
+            line-height: 100%;
+            text-transform: uppercase;
+        }
+    }
+
+    &__list {
+        @include list-reset;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        row-gap: 21px;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        row-gap: 30px;
+        h3 {
+            font-weight: 700;
+            font-size: 60px;
+            line-height: 100%;
+            margin: 0;
+            text-transform: uppercase;
+            color: $color-midnight-express;
+        }
+
+        ul {
+            @include list-reset;
+        }
+
+        li {
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 150%;
+            color: $color-charcoal;
+        }
+    }
+}
