@@ -1,6 +1,6 @@
 .profile {
     position: relative;
-    padding-top: 30px;
+    padding-top: 94px;
     padding-bottom: 65px;
     background-color: $color-default-white;
     z-index: 6;
@@ -9,6 +9,7 @@
         border-bottom-left-radius: 60px;
         border-bottom-right-radius: 60px;
         padding-bottom: 60px;
+        padding-top: 30px;
     }
 
     &__container {
@@ -242,4 +243,78 @@
         }
     }
 
+    &__modal {
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+        animation: showModal 0.6s ease forwards;
+
+        &.is-open {
+            display: block;
+            opacity: 1;
+        }
+    }
+
+    &__rate {
+        min-width: 750px;
+        border-radius: 30px;
+        background-color: $color-default-white;
+        box-shadow: 0 4px 22px 0 rgba(29, 46, 91, 0.18);
+        padding-top: 54px;
+        overflow: hidden;
+
+        h3 {
+            font-weight: 700;
+            font-size: 45px;
+            line-height: 100%;
+            text-align: center;
+            margin: 0;
+            margin-bottom: 58px;
+            font-variant: all-small-caps;
+            color: $color-midnight-express;
+        }
+
+        ul {
+            @include list-reset;
+            padding-left: 54px;
+            padding-right: 40px;
+            margin-bottom: 54px;
+
+            li {
+                display: flex;
+                justify-content: space-between;
+                gap: 40px;
+                padding-top: 12px;
+                padding-bottom: 15px;
+                border-top: 1px solid rgba(0, 0, 0, 0.05);
+                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+                border-collapse: collapse;
+            }
+
+            h4 {
+                margin: 0;
+                font-weight: 400;
+                font-size: 22px;
+                line-height: 127%;
+            }
+
+            p {
+                font-weight: 300;
+                font-size: 22px;
+                line-height: 127%;
+                margin: 0;
+            }
+        }
+
+        button {
+            width: 100%;
+            margin-top: auto;
+            padding: 40px 44px;
+            background-color: #f3f4f8;
+        }
+    }
 }

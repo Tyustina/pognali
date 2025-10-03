@@ -1,9 +1,11 @@
 import Swiper from 'swiper';
+import { Mousewheel, Autoplay } from 'swiper/modules';
+
 const slider = document.querySelector('.direction__slider');
 const sliderList = document.querySelector('.direction__slide-list');
 const slides = document.querySelectorAll('.direction__item');
 const isMobile = window.innerWidth < 768;
-
+const countrySlider = null;
 export function checkWidth() {
     if (isMobile) {
         clearSwiperClass();
@@ -21,11 +23,9 @@ function insertSwiperClass() {
 }
 
 function clearSwiperClass() {
-    slider.classList.remove('swiper');
-    sliderList.classList.remove('swiper-wrapper');
-    slides.forEach((slide) => {
-        slide.classList.remove('swiper-slide');
-    });
+    if (countrySlider) {
+        countrySlider.destroy(true, true);
+    }
 }
 
 function initSwiper() {
@@ -38,17 +38,19 @@ function initSwiper() {
             sliderList.appendChild(clone);
         });
     }
-        const swiper = new Swiper(slider, {
-            direction: 'vertical', // Вертикальный слайдер
-            loop: true, // Зацикливание слайдов
-            slidesPerView: 3,
-            slidesPerGroup: 1,
-            spaceBetween: 10, // Отступ между слайдами
-            autoplay: {
-                delay: 3000, // Автоматическое пролистывание каждые 3 секунды
-                disableOnInteraction: false, // Продолжать автопрокрутку после ручного перелистывания
-            },
-            grabCursor: true, // Курсор в виде "руки" для захвата
-            mousewheel: true, // Поддержка перелистывания колесом мыши
-        });
-    }
+    const countrySlider = new Swiper(slider, {
+        direction: 'vertical', // Вертикальный слайдер
+        modules: [Mousewheel, Autoplay],
+        loop: true, // Зацикливание слайдов
+        slidesPerView: 3,
+        slidesPerGroup: 1,
+        centeredSlides: true,
+        spaceBetween: 10, // Отступ между слайдами
+        // autoplay: {
+        //     delay: 3000, // Автоматическое пролистывание каждые 3 секунды
+        //     disableOnInteraction: false, // Продолжать автопрокрутку после ручного перелистывания
+        // },
+        grabCursor: true, // Курсор в виде "руки" для захвата
+        mousewheel: true, // Поддержка перелистывания колесом мыши
+    });
+}

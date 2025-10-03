@@ -4,17 +4,6 @@
     width: 225px;
     height: min-content;
 
-    &--light {
-        svg {
-            color: $color-default-white;
-
-            @include vp-1023 {
-                width: 106px;
-                height: 17px;
-            }
-        }
-    }
-
     img {
         @include vp-767 {
             display: none;
@@ -23,9 +12,9 @@
 
     svg {
         position: absolute;
-        left: 39%;
         top: 50%;
         transform: translateY(-50%);
+
 
         @include vp-767 {
             position: relative;
@@ -34,9 +23,35 @@
         }
     }
 
-    &--dark svg {
-        color: black;
-        left: 31%;
+    &--light {
+        @include vp-1023 {
+            width: 320px;
+        }
+
+        svg {
+            color: $color-default-white;
+            left: 39%;
+
+            @include vp-1023 {
+                left: 36%;
+                width: 106px;
+                height: 17px;
+            }
+
+            @include vp-767 {
+                left: 2px;
+                top: 2px;
+                width: 96px;
+                height: 15px;
+            }
+        }
+    }
+
+    &--dark {
+        svg {
+            color: black;
+            left: 31%;
+        }
     }
 
 }

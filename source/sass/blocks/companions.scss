@@ -100,10 +100,9 @@
             order: 3;
         }
 
-        button {
-            gap: 48px;
-            margin-left: 4px;
-            padding-right: 25px;
+        a {
+            gap: 47px;
+            padding-right: 35px;
 
             @include vp-1023 {
                 width: 100%;
