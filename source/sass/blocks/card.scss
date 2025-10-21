@@ -1,7 +1,7 @@
 .card {
     position: relative;
     min-height: 483px;
-    min-width: 285px;
+    width: 285px;
     display: grid;
     grid-template-rows: 265px 1fr;
     background-color: $color-default-white;
@@ -11,6 +11,13 @@
 
     ul {
         @include list-reset;
+    }
+
+    @include vp-767 {
+        grid-template-rows: 270px 1fr;
+        border-radius: 10px;
+        width: 270px;
+        min-height: unset;
     }
 
     &__info {
@@ -23,6 +30,11 @@
         padding-bottom: 15px;
         padding-left: 15px;
         padding-right: 15px;
+
+        @include vp-767 {
+            padding-top: 30px;
+            gap: 10px;
+        }
     }
 
     h3 {
@@ -33,6 +45,11 @@
         text-align: center;
         color: $color-catalina-blue;
         margin: 0;
+
+        @include vp-767 {
+            font-size: 21px;
+            line-height: 100%;
+        }
     }
 
     &__hashtags {
@@ -47,6 +64,11 @@
             line-height: 115%;
             text-align: center;
             color: $color-charcoal;
+
+            @include vp-767 {
+                font-size: 16px;
+                line-height: 112%;
+            }
         }
     }
 
@@ -105,7 +127,7 @@
 
     &__level-wrapper {
         position: absolute;
-        top:17px;
+        top: 17px;
         left: 22px;
     }
 
