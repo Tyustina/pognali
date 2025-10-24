@@ -1,17 +1,25 @@
 const profileBlock = document.querySelector('.profile')
-const profileModal = profileBlock.querySelector(' .profile__modal')
-const openModalButton = profileBlock.querySelector('.profile__button')
-const closeModalButton = profileModal.querySelector('button')
+const profileModal = document.querySelector('.profile__modal')
+const openModalButton = document.querySelector('.profile__button')
+const closeModalButton = document.querySelector('button')
 
+export function openCloseModal() {
+    if (profileBlock) {
+        openModalButton.addEventListener('click', openModal)
+        closeModalButton.addEventListener('click', closeModal)
+    }
+}
 
-openModalButton.addEventListener('click', openModal)
-closeModalButton.addEventListener('click',closeModal)
 
 function openModal() {
-    profileModal.classList.add('is-open')
+    if (profileModal) {
+        profileModal.classList.add('is-open')
+    }
 }
 
 function closeModal() {
-    profileModal.classList.remove('is-open')
+    if (profileModal) {
+        profileModal.classList.remove('is-open')
+    }
 }
 

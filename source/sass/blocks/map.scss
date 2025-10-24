@@ -37,6 +37,12 @@
             row-gap: 44px;
         }
 
+        @include vp-767 {
+            padding: 118px 25px 33px 25px;
+            border-bottom-left-radius: 32px;
+            border-bottom-right-radius: 32px;
+        }
+
         button {
             gap: 18px;
             padding-right: 16px;
@@ -48,10 +54,26 @@
 
             span {
                 display: block;
+
+                @include vp-767 {
+                    font-size: 18px;
+                    line-height: 100%;
+                }
+            }
+
+            svg {
+                @include vp-767 {
+                    margin-left: auto;
+                }
             }
 
             @include vp-1023 {
                 width: 100%;
+            }
+
+            @include vp-767 {
+                padding: 20px 12px;
+                border-radius: 10px;
             }
         }
     }
@@ -69,6 +91,10 @@
             gap: 26px;
         }
 
+        @include vp-767 {
+            gap: 16px;
+        }
+
         span {
             display: flex;
             justify-content: center;
@@ -83,10 +109,20 @@
                 height: 68px;
             }
 
+            @include vp-767 {
+                width: 56px;
+                height: 45px;
+            }
+
             svg {
                 @include vp-1023 {
                     width: 32px;
                     height: 32px;
+                }
+
+                @include vp-767 {
+                    width: 21px;
+                    height: 21px;
                 }
             }
         }
@@ -97,6 +133,11 @@
             line-height: 100%;
             margin: 0;
             text-transform: uppercase;
+
+            @include vp-767 {
+                font-size: 16px;
+                line-height: 137%;
+            }
         }
     }
 

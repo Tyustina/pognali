@@ -3,6 +3,7 @@
   padding: 47px 0;
   align-items: center;
   width: 100%;
+  background-color: transparent;
   z-index: 15;
 
   @include vp-1023 {
@@ -11,6 +12,27 @@
 
   @include vp-767 {
     padding: 35px 0;
+  }
+
+  &.is-open-nav {
+
+    @include vp-1023 {
+      background-color: $color-default-white;
+      padding-top: 25px;
+      transition: background-color 0.3s ease-in, padding 0.3s ease-in;
+    }
+  }
+
+  .is-open-nav &__logo {
+    z-index: 10;
+
+    @include vp-1023 {
+
+      svg {
+        color: $color-midnight-express;
+        transition: color 0.3s ease-in;
+      }
+    }
   }
 
   &__container {
@@ -27,6 +49,4 @@
       justify-content: space-between;
     }
   }
-
-  
 }

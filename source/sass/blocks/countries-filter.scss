@@ -1,4 +1,10 @@
 .countries-filter {
+
+    padding-bottom: 200px; //подогнать
+    &__wrapper {
+        position: relative;
+    }
+
     &__buttons {
         display: flex;
 
@@ -13,6 +19,7 @@
             font-size: 20px;
             line-height: 100%;
             text-transform: uppercase;
+            z-index: 10;
             cursor: pointer;
         }
     }
@@ -22,23 +29,44 @@
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         row-gap: 21px;
+        background-color: $color-default-white;
     }
 
+    &__list.is-open &__item>ul {
+        position: relative;
+        transform: translateY(0);
+        opacity: 1;
+    }
+    &__list.is-open {
+        position: absolute;
+        top: 0;
+        z-index: 30;
+    }
+
+
     &__item {
+        position: relative;
         display: flex;
         flex-direction: column;
         row-gap: 30px;
+
         h3 {
             font-weight: 700;
             font-size: 60px;
             line-height: 100%;
             margin: 0;
             text-transform: uppercase;
+            background-color: $color-default-white;
             color: $color-midnight-express;
         }
 
         ul {
             @include list-reset;
+            position: absolute;
+            z-index: -1;
+            transform: translateY(-50%);
+            opacity: 0;
+            transition: transform 0.5s ease-in-out, opacity 0.2s ease-in;
         }
 
         li {
@@ -46,6 +74,73 @@
             font-size: 20px;
             line-height: 150%;
             color: $color-charcoal;
+        }
+    }
+
+    &__cards-list {
+            display: flex;
+            flex-direction: column;
+    }
+
+    &__card {
+        grid-template-columns: 285px 1fr;
+        grid-template-rows: auto;
+        min-height: unset;
+        width: unset;
+    }
+
+    &__result {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        gap: 86px;
+    }
+
+    &__card-info {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 46px 101px 42px 62px;
+
+        h3 {
+            text-align: start;
+            margin-bottom: 20px;
+        }
+    }
+
+    &__card-wrapper:last-of-type {
+        margin-left: auto;
+    }
+
+    &__card-hashtags {
+         @include list-reset;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__card-countries  {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        margin-bottom: 54px;
+
+        li {
+            display: flex;
+            gap: 18px;
+        }
+
+        p {
+            padding: 0;
+            margin: 0;
+            font-size: 20px;
+line-height: 100%;
+text-transform: uppercase;
+        }
+    }
+
+    &__card-transport {
+        display: flex;
+
+        li {
+            display: block;
         }
     }
 }

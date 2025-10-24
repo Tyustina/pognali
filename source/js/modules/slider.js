@@ -7,11 +7,13 @@ const slides = document.querySelectorAll('.direction__item');
 const isMobile = window.innerWidth < 768;
 const countrySlider = null;
 export function checkWidth() {
-    if (isMobile) {
-        clearSwiperClass();
-    } else {
-        insertSwiperClass();
-        initSwiper();
+    if (slider) {
+        if (isMobile) {
+            clearSwiperClass();
+        } else {
+            insertSwiperClass();
+            initSwiper();
+        }
     }
 }
 function insertSwiperClass() {

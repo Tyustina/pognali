@@ -14,7 +14,7 @@ mixin header(headerMods, currentUrl)
   header.header(class=headerMods)
     .header__container.container
       if(currentUrl === "index.html")
-        .logo.logo--light
+        .logo.logo--light.header__logo
           +picture("content","logo-full-bg","png", 187, 50, "Логотип")
           +icon("logo-mobile", 128, 20)
       else
@@ -23,8 +23,8 @@ mixin header(headerMods, currentUrl)
             +picture("content","logo-full-bg","png", 187, 50, "Логотип")
             +icon("logo-mobile", 128, 20)
 
-      nav.nav.nav--opened
-        button(type="button" aria-label="Открыть меню")
+      nav.nav.header__nav
+        button(type="button" aria-label="Открыть меню").nav__button
           span
           span
         .nav__container
@@ -44,9 +44,22 @@ mixin header(headerMods, currentUrl)
             ul 
               li
                 a(href="tel:+78005558628" aria-label="Позвонить")
-                  +icon("icon-call", 18, 18)
-                span 8 800 555-86-28
+                  span
+                    +icon("icon-call", 18, 18)
+                  p 8 800 555-86-28
               li
                 a(href="mailto:mail@htmlacademy.ru" aria-label="Написать письмо")
-                  +icon("icon-mail", 18, 18)
-                span mail@htmlacademy.ru
+                  span 
+                    +icon("icon-mail", 18, 18)
+                  p mail@htmlacademy.ru
+          .nav__links 
+            ul
+              li
+                a(href="#")
+                  +icon("icon-telegram",23,23)
+              li
+                a(href="#")
+                  +icon("icon-vkontakte",32,32)
+              li
+                a(href="#")
+                  +icon("icon-youtube",23,23)

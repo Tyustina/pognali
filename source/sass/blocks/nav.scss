@@ -1,5 +1,6 @@
 .nav {
     width: 100%;
+
     @include vp-1023 {
         display: flex;
         align-items: center;
@@ -8,19 +9,8 @@
     @include vp-767 {
         justify-content: flex-end;
     }
-    &--closed &__container {
-        @include vp-1023 {
-            display: none;
-        }
-    }
 
-    &--opened &__container {
-        @include vp-1023 {
-            display: flex;
-        }
-    }
-
-    button {
+    &__button {
         display: none;
 
         @include vp-1023 {
@@ -30,6 +20,8 @@
             height: 25px;
             border: none;
             background-color: transparent;
+            cursor: pointer;
+            z-index: 5;
 
             &::before {
                 position: absolute;
@@ -58,17 +50,76 @@
             }
         }
     }
+
     &__container {
         display: flex;
         align-items: center;
         gap: 20px;
+        background-color: transparent;
 
         @include vp-1023 {
+            transform: translateY(-100%);
+            opacity: 0;
+            flex-direction: column;
             position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: $color-default-white;
+            transition: transform 0.5s ease-in, opacity 0.5s ease-in;
+        }
+    }
+
+    .is-open &__container {
+        transform: translateY(0);
+        opacity: 1;
+
+        @include vp-1023 {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding-left: 40px;
+            padding-right: 40px;
+            padding-bottom: 40px;
+        }
+
+        @include vp-767 {
+            padding-left: 25px;
+            padding-right: 25px;
+            padding-bottom: 28px;
+            margin: 0 auto;
+        }
+    }
+
+    .is-open &__button {
+
+        @include vp-1023 {
+            &::before {
+                background-color: #cccccc;
+                transform: rotate(45deg);
+                width: 23px;
+                height: 2px;
+                top: 25%;
+                transition: transform 0.3s ease-in, background-color 0.3s ease-in;
+            }
+
+            &::after {
+                background-color: #cccccc;
+                transform: rotate(-45deg);
+                width: 23px;
+                height: 2px;
+                top: 25%;
+                transition: transform 0.3s ease-in, background-color 0.3s ease-in;
+            }
         }
     }
 
     &__site-list {
+
+        @include vp-1023 {
+            display: flex;
+        }
+
         ul {
             @include list-reset;
             position: relative;
@@ -77,20 +128,28 @@
             padding-left: 105px;
             padding-top: 12px;
 
-            &::before {
-                position: absolute;
-                content: "";
-                display: block;
-                width: 60px;
-                height: 2px;
-                top: 55%;
-                transform: translateY(-50%);
-                left: 0;
-                background-color: $color-default-white;
+            @include vp-1023 {
+                flex-direction: column;
+                padding-left: 0;
+                padding-top: 87px;
+                gap: 4px;
+            }
 
-                @include vp-1023 {
-                    display: none;
-                }
+        }
+
+        ul::before {
+            position: absolute;
+            content: "";
+            display: block;
+            width: 60px;
+            height: 2px;
+            top: 55%;
+            transform: translateY(-50%);
+            left: 0;
+            background-color: $color-default-white;
+
+            @include vp-1023 {
+                display: none;
             }
         }
 
@@ -105,12 +164,21 @@
             white-space: nowrap;
             overflow: hidden;
             padding: 0;
+
+            @include vp-1023 {
+                color: $color-midnight-express;
+            }
         }
 
         a span {
             display: inline-block;
             position: relative;
             transition: transform 0.3s ease 0s;
+
+            @include vp-1023 {
+                font-size: 30px;
+                line-height: 100%;
+            }
         }
 
         a span:before {
@@ -125,6 +193,28 @@
         a:focus span {
             transform: translateY(-100%);
             color: $color-jordy-blue;
+        }
+    }
+
+    &__links {
+        padding: 0 25px;
+        margin: 0 auto;
+
+        ul {
+            display: none;
+
+            @include vp-1023 {
+                @include list-reset;
+                display: flex;
+            }
+        }
+
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 45px;
+            height: 45px;
         }
     }
 }

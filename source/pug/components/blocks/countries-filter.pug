@@ -31,7 +31,7 @@ mixin countries-filter()
     section.countries-filter
         .countries-filter__container.container
             .countries-filter__buttons
-                button(type="button")
+                button(type="button").countries-filter__button
                     span Фильтрация по странам
                 ul 
                     li 
@@ -42,11 +42,91 @@ mixin countries-filter()
                         button(type="button") Америка
                     li 
                         button(type="button") Острова
-            ul.countries-filter__list
-                each item in alphabetList
-                    li.countries-filter__item
-                        h3= item.letter
-                        ul
-                            each country in item.countries
-                                li= country
-            button(type="button") Свернуть
+            .countries-filter__wrapper
+                ul.countries-filter__list
+                    each item in alphabetList
+                        li.countries-filter__item
+                            h3= item.letter
+                            ul
+                                each country in item.countries
+                                    li= country
+                    button(type="button") Свернуть
+        .countries-filter__result 
+            .countries-filter__cards
+                ul.countries-filter__cards-list
+                    li.card.card--offline.countries-filter__card 
+                        .card__img-wrapper 
+                            +picture("content", "user-1", "png", 285,286,"")
+                        .card__level-wrapper
+                            .card__big-circle
+                                .card__level(style="--level: 99%;")
+                                    .card__circle
+                                        .card__number 99
+                                            .card__label level
+                        .countries-filter__card-info
+                            .countries-filter__card-wrapper
+                                h3 Таня Фирсова
+                                ul.countries-filter__card-hashtags 
+                                    li #ЗОЖ 
+                                    li #ПП 
+                                    li #Фитнес 
+                                    li #пляж
+                                    li #авокадо
+                                    li #смузи
+                            .countries-filter__card-wrapper
+                                ul.countries-filter__card-countries 
+                                    li 
+                                        +picture("content","sri-lanka-flag","png",35,24,"")
+                                        p Шри-ланка
+                                    li 
+                                        +picture("content","thailand-flag","png",35,24,"")
+                                        p Таиланд
+                                    li 
+                                        +picture("content","seychelles-flag","png",35,24,"")
+                                        p Сейшелы
+                                ul.countries-filter__card-transport
+                                    li 
+                                        +icon("icon-plane",24,22)
+                                    li
+                                        +icon("icon-bus",19,20)
+                                    li
+                                        +icon("icon-bicycle",26,25)
+                                    li
+                                        +icon("icon-run",23,24)
+                    li.card.card--online.countries-filter__card 
+                        .card__img-wrapper 
+                            +picture("content", "user-2", "png", 285,285,"")
+                        .countries-filter__wrapper
+                            .card__big-circle
+                                .card__level(style="--level: 80%;")
+                                    .card__circle
+                                        .card__number 80
+                                        .card__label level 
+                        .card__info 
+                            h3 Петя Демин
+                            ul.card__hashtags 
+                                li #бургер 
+                                li #бар 
+                                li #футбол
+                                li #концерт
+                                li #крафт
+                            ul.card__countries 
+                                li 
+                                    +picture("content","belgium-flag","png",35,24,"")
+                                    p Бельгия
+                                li 
+                                    +picture("content","czech-flag","png",35,24,"")
+                                    p Чехия
+                            ul.card__transport 
+                                li 
+                                    +icon("icon-plane",24,22)
+                                li 
+                                    +icon("icon-bus",19,20)
+                                li 
+                                    +icon("icon-bicycle",26,25)
+                                li
+                                    +icon("icon-run",23,24)
+
+
+            .countries-filter__form
+            .countries-filter__pagination 

@@ -9,9 +9,9 @@
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
     overflow: hidden;
 
-    ul {
-        @include list-reset;
-    }
+    // ul {
+    //     @include list-reset;
+    // }
 
     @include vp-767 {
         grid-template-rows: 270px 1fr;
@@ -53,6 +53,7 @@
     }
 
     &__hashtags {
+        @include list-reset;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -73,6 +74,7 @@
     }
 
     &__countries {
+         @include list-reset;
         position: absolute;
         display: flex;
         gap: 20px;
@@ -85,6 +87,7 @@
     }
 
     &__transport {
+         @include list-reset;
         display: flex;
         gap: 10px;
     }
