@@ -29,11 +29,12 @@ mixin countries-filter()
         ]
 
     section.countries-filter
-        .countries-filter__container.container
-            .countries-filter__buttons
+        .countries-filter__container
+            .countries-filter__buttons.container
                 button(type="button").countries-filter__button
+                    +icon('icon-filter', 23,15)
                     span Фильтрация по странам
-                ul 
+                ul
                     li 
                         button(type="button") Европа
                     li 
@@ -43,7 +44,7 @@ mixin countries-filter()
                     li 
                         button(type="button") Острова
             .countries-filter__wrapper
-                ul.countries-filter__list
+                ul.countries-filter__list.container
                     each item in alphabetList
                         li.countries-filter__item
                             h3= item.letter
@@ -96,37 +97,296 @@ mixin countries-filter()
                     li.card.card--online.countries-filter__card 
                         .card__img-wrapper 
                             +picture("content", "user-2", "png", 285,285,"")
-                        .countries-filter__wrapper
+                        .card__level-wrapper
                             .card__big-circle
                                 .card__level(style="--level: 80%;")
                                     .card__circle
                                         .card__number 80
-                                        .card__label level 
-                        .card__info 
-                            h3 Петя Демин
-                            ul.card__hashtags 
-                                li #бургер 
-                                li #бар 
-                                li #футбол
-                                li #концерт
-                                li #крафт
-                            ul.card__countries 
+                                            .card__label level
+                        .countries-filter__card-info
+                            .countries-filter__card-wrapper
+                                h3 Петя Демин
+                                ul.countries-filter__card-hashtags 
+                                    li #бургер 
+                                    li #бар 
+                                    li #футбол
+                                    li #концерт
+                                    li #крафт
+                                .countries-filter__card-button 
+                                    button(type="button") Позвать
+                                    .countries-filter__card-button-likes 
+                                        span 
+                                            +icon("icon-heart", 15, 15)
+                                        p 1500
+                            .countries-filter__card-wrapper
+                                ul.countries-filter__card-countries 
+                                    li 
+                                        +picture("content","belgium-flag","png",35,24,"")
+                                        p Бельгия
+                                    li 
+                                        +picture("content","czech-flag","png",35,24,"")
+                                        p Чехия
+                                ul.countries-filter__card-transport
+                                    li 
+                                        +icon("icon-plane",24,22)
+                                    li
+                                        +icon("icon-bus",19,20)
+                                    li
+                                        +icon("icon-bicycle",26,25)
+                                    li
+                                        +icon("icon-run",23,24)
+                    li.card.card--online.countries-filter__card 
+                        .card__img-wrapper 
+                            +picture("content", "user-3", "png", 285,285,"")
+                        .card__level-wrapper
+                            .card__big-circle
+                                .card__level(style="--level: 25%;")
+                                    .card__circle
+                                        .card__number 25
+                                            .card__label level
+                        .countries-filter__card-info
+                            .countries-filter__card-wrapper
+                                h3 Марк Смолов
+                                ul.countries-filter__card-hashtags 
+                                    li #рэп
+                                    li #тату 
+                                    li #хайпбист
+                                    li #кроссовки
+                                    li #суприм
+                                .countries-filter__card-button 
+                                    button(type="button") Позвать
+                                    .countries-filter___card-button-likes 
+                                        span 
+                                            +icon("icon-heart", 15, 15)
+                                        p 170
+                            .countries-filter__card-wrapper
+                                ul.countries-filter__card-countries 
+                                    li 
+                                        +picture("content","usa-flag","png",35,24,"")
+                                        p США
+                                    li 
+                                        +picture("content","australia-flag","png",35,24,"")
+                                        p Австралия
+                                    li 
+                                        +picture("content","czech-flag","png",35,24,"")
+                                        p Доминика
+                                ul.countries-filter__card-transport
+                                    li 
+                                        +icon("icon-plane",24,22)
+                                    li
+                                        +icon("icon-bus",19,20)
+                                    li
+                                        +icon("icon-bicycle",26,25)
+                                    li
+                                        +icon("icon-run",23,24)
+                    li.card.card--online.countries-filter__card 
+                        .card__img-wrapper
+                            +picture("content", "user-4", "png", 285,285,"")
+                        .card__level-wrapper
+                            .card__big-circle
+                                .card__level(style="--level: 50%;")
+                                    .card__circle
+                                        .card__number 50
+                                            .card__label level
+                        .countries-filter__card-info
+                            .countries-filter__card-wrapper
+                                h3 Лариса Роговая
+                                ul.countries-filter__card-hashtags 
+                                    li #образование
+                                    li #карьера
+                                    li #учеба
+                                    li #линкедин
+                                .countries-filter__card-button 
+                                    button(type="button") Позвать!
+                                    .countries-filter__card-button-likes 
+                                        span 
+                                            +icon("icon-heart", 15, 15)
+                                        p 23
+                            .countries-filter__card-wrapper
+                                ul.countries-filter__card-countries 
+                                    li 
+                                        +picture("content","britain-flag","png",35,24,"")
+                                        p Великобритания
+                                    li 
+                                        +picture("content","germany-flag","png",35,24,"")
+                                        p Германия
+                                ul.countries-filter__card-transport
+                                    li 
+                                        +icon("icon-plane",24,22)
+                                    li
+                                        +icon("icon-bus",19,20)
+                                    li
+                                        +icon("icon-bicycle",26,25)
+                                    li
+                                        +icon("icon-run",23,24)
+                    form.filter__form-companion
+                        h2.filter__title Подберите идеального попутчика
+                        .filter__groupe-wrapper
+                            fieldset.filter__group
+                                button.filter__button-group(type='button' aria-expanded="false") Хобби
+                                span.filter__icon-btn
+                                    +icon("icon-polygon-filter", 10, 6)
+                                .filter__group-content.filter__group-content--hobby
+                                label.filter__label
+                                    input.visually-hidden(type="checkbox" name="checkbox" value="yes" checked)
+                                    span.filter__indicator
+                                    +icon("icon-check-mark", 11, 11.3)
+                                    span.filter__checkbox-text Спортзал
+                                label.filter__label
+                                    input.visually-hidden(type="checkbox" name="checkbox" value="yes")
+                                    span.filter__indicator
+                                    +icon("icon-check-mark", 11, 11.3)
+                                    span.filter__checkbox-text Кальян
+                                label.filter__label
+                                    input.visually-hidden(type="checkbox" name="checkbox" value="yes")
+                                    span.filter__indicator
+                                    +icon("icon-check-mark", 11, 11.3)
+                                    span.filter__checkbox-text Диван
+                            fieldset.filter__group
+                                button.filter__button-group(type='button' aria-expanded="true") Музыка
+                                span.filter__icon-btn
+                                    +icon("icon-polygon-filter", 10, 6)
+                                .filter__group-content.filter__group-content--music.filter__group-content--active
+                                label.filter__label
+                                    input.visually-hidden(type="checkbox" name="checkbox" value="heavy-rock" checked)
+                                    span.filter__indicator
+                                    +icon("icon-check-mark", 11, 11.3)
+                                    span.filter__checkbox-text Тяжелый рок
+                                label.filter__label
+                                    input.visually-hidden(type="checkbox" name="checkbox" value="russian-rap")
+                                    span.filter__indicator
+                                    +icon("icon-check-mark", 11, 11.3)
+                                    span.filter__checkbox-text Русский рэп
+                                label.filter__label
+                                    input.visually-hidden(type="checkbox" name="checkbox" value="eurodance")
+                                    span.filter__indicator
+                                    +icon("icon-check-mark", 11, 11.3)
+                                    span.filter__checkbox-text Евроденс
+                            fieldset.filter__group
+                                button.filter__button-group(type='button' aria-expanded="false") Еда
+                                span.filter__icon-btn
+                                    +icon("icon-polygon-filter", 10, 6)
+                                .filter__group-content.filter__group-content--food
+                                label.filter__label
+                                    input.visually-hidden(type="checkbox" name="checkbox" value="meat" checked)
+                                    span.filter__indicator
+                                    +icon("icon-check-mark", 11, 11.3)
+                                    span.filter__checkbox-text Мясоед
+                                label.filter__label
+                                    input.visually-hidden(type="checkbox" name="checkbox" value="pp-food")
+                                    span.filter__indicator
+                                    +icon("icon-check-mark", 11, 11.3)
+                                    span.filter__checkbox-text Сидит на ПП
+                                label.filter__label
+                                    input.visually-hidden(type="checkbox" name="checkbox" value="vegan")
+                                    span.filter__indicator
+                                    +icon("icon-check-mark", 11, 11.3)
+                                    span.filter__checkbox-text Веган-сыроед
+                            fieldset.filter__group
+                                button.filter__button-group(type='button' aria-expanded="true") Транспорт
+                                span.filter__icon-btn
+                                    +icon("icon-polygon-filter", 10, 6)
+                                .filter__group-content.filter__group-content--transport.filter__group-content--active
+                                label.filter__label-transport
+            .countries-filter__form.form
+                h2 Подберите идеального попутчика
+                form.form__wrapper(action="#" method="post")
+                    fieldset
+                        legend Хобби
+                            +icon("arrow",10,6)
+                        #hobby-content.form__accordeon-content
+                            ul.form__options-list
                                 li 
-                                    +picture("content","belgium-flag","png",35,24,"")
-                                    p Бельгия
+                                    label(for="hobby1") Спорт
+                                        input(type="checkbox" name="hobby" value="rock" id="hobby1" checked).form__input.visually-hidden
+                                        span.form__checkbox-marker
+                                            +icon("icon-check",11,11.3)
                                 li 
-                                    +picture("content","czech-flag","png",35,24,"")
-                                    p Чехия
-                            ul.card__transport 
+                                    label(for="hobby2") Чтение
+                                        input(type="checkbox" name="hobby" value="rap" id="hobby2").form__input.visually-hidden
+                                        span.form__checkbox-marker
+                                            +icon("icon-check",11,11.3)
                                 li 
-                                    +icon("icon-plane",24,22)
+                                    label(for="hobby3")  Диван
+                                        input(type="checkbox" name="hobby" value="evro" id="hobby3").form__input.visually-hidden
+                                        span.form__checkbox-marker
+                                            +icon("icon-check",11,11.3) 
+                    fieldset 
+                        legend Музыка
+                        #music-content.form__accordeon-content.is-open
+                            ul.form__options-list    
                                 li 
-                                    +icon("icon-bus",19,20)
+                                    label(for="music1") Тяжелый рок
+                                        input(type="checkbox" name="music" value="rock" id="music1").form__input.visually-hidden
+                                        span.form__checkbox-marker
+                                            +icon("icon-check",11,11.3)
                                 li 
-                                    +icon("icon-bicycle",26,25)
+                                    label(for="music2") Русский рэп
+                                        input(type="checkbox" name="music" value="rap" id="music2").form__input.visually-hidden
+                                        span.form__checkbox-marker
+                                            +icon("icon-check",11,11.3)
+                                li 
+                                    label(for="music3")  Евроденс
+                                        input(type="checkbox" name="hobby" value="evro" id="music3").form__input.visually-hidden
+                                        span.form__checkbox-marker
+                                            +icon("icon-check",11,11.3)
+                    fieldset 
+                        legend Еда
+                        #food-content.form__accordeon-content
+                            ul.form__options-list    
+                                li 
+                                    label(for="food1") Чили
+                                        input(type="checkbox" name="food" value="chili" id="food1").form__input.visually-hidden
+                                        span.form__checkbox-marker
+                                            +icon("icon-check",11,11.3)
+                                li 
+                                    label(for="food2") Бургер
+                                        input(type="checkbox" name="food" value="burger" id="food2").form__input.visually-hidden
+                                        span.form__checkbox-marker
+                                            +icon("icon-check",11,11.3)
+                                li 
+                                    label(for="food3") Чипсы
+                                        input(type="checkbox" name="food" value="chips" id="food3").form__input.visually-hidden
+                                        span.form__checkbox-marker
+                                            +icon("icon-check",11,11.3)
+                                li 
+                                    label(for="food4") Картошка-фри
+                                        input(type="checkbox" name="food" value="fries" id="food4").form__input.visually-hidden
+                                        span.form__checkbox-marker
+                                            +icon("icon-check",11,11.3)
+                    fieldset 
+                        legend Транспорт
+                        .form__accordeon-content.is-open
+                            ul.form__options-list.form__transport-list   
                                 li
-                                    +icon("icon-run",23,24)
-
-
-            .countries-filter__form
-            .countries-filter__pagination 
+                                    label
+                                        input(type="checkbox" name="transport" value="plane").form__transport-input.visually-hidden
+                                        span
+                                            +icon("icon-plane",24,22)
+                                li
+                                    label
+                                        input(type="checkbox" name="transport" value="bus").form__transport-input.visually-hidden
+                                        span
+                                            +icon("icon-bus",19,20)
+                                li
+                                    label
+                                        input(type="checkbox" name="transport" value="bicycle").form__transport-input.visually-hidden
+                                        span
+                                            +icon("icon-bicycle",26,25)
+                                li
+                                    label
+                                        input(type="checkbox" name="transport" value="run").form__transport-input.visually-hidden
+                                        span
+                                            +icon("icon-run",23,24)
+                    fieldset
+                        legend Уровень
+                        .level-display.form__accordeon-content.is-open
+                            span#minLevel 30
+                            span#maxLevel 100
+                        .range-slider
+                            input(type="range" min="0" max="100" value="30" id="rangeSlider" oninput="updateLevels(event)")
+                            .toggle-container
+                            .toggle#minToggle
+                            .toggle#maxToggle                    
+                    button(type="submit") ПОКАЗАТЬ
+    .countries-filter__pagination 

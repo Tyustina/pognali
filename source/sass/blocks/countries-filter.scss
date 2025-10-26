@@ -1,12 +1,22 @@
 .countries-filter {
 
     padding-bottom: 200px; //подогнать
+
     &__wrapper {
         position: relative;
+
+        h2 {
+            font-weight: 700;
+            font-size: 30px;
+            line-height: 100%;
+            margin: 0;
+        }
     }
 
     &__buttons {
         display: flex;
+        padding-top: 57px;
+        padding-bottom: 80px;
 
         ul {
             @include list-reset;
@@ -14,6 +24,8 @@
         }
 
         button {
+            display: flex;
+            gap: 22px;
             border: none;
             background-color: transparent;
             font-size: 20px;
@@ -26,23 +38,22 @@
 
     &__list {
         @include list-reset;
-        display: grid;
+        position: absolute;
+        display: none;
         grid-template-columns: repeat(5, 1fr);
         row-gap: 21px;
         background-color: $color-default-white;
+        transform: translateY(-100%);
+        transition: transform 0.5s ease-in-out, opacity 0.2s ease-in;
+        opacity: 0;
+        z-index: 5;
     }
 
-    &__list.is-open &__item>ul {
-        position: relative;
+    &__list.is-open {
+        display: grid;
         transform: translateY(0);
         opacity: 1;
     }
-    &__list.is-open {
-        position: absolute;
-        top: 0;
-        z-index: 30;
-    }
-
 
     &__item {
         position: relative;
@@ -62,11 +73,6 @@
 
         ul {
             @include list-reset;
-            position: absolute;
-            z-index: -1;
-            transform: translateY(-50%);
-            opacity: 0;
-            transition: transform 0.5s ease-in-out, opacity 0.2s ease-in;
         }
 
         li {
@@ -78,8 +84,9 @@
     }
 
     &__cards-list {
-            display: flex;
-            flex-direction: column;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
     }
 
     &__card {
@@ -111,12 +118,12 @@
     }
 
     &__card-hashtags {
-         @include list-reset;
+        @include list-reset;
         display: flex;
         flex-wrap: wrap;
     }
 
-    &__card-countries  {
+    &__card-countries {
         display: flex;
         flex-direction: column;
         gap: 14px;
@@ -131,8 +138,8 @@
             padding: 0;
             margin: 0;
             font-size: 20px;
-line-height: 100%;
-text-transform: uppercase;
+            line-height: 100%;
+            text-transform: uppercase;
         }
     }
 
@@ -142,5 +149,40 @@ text-transform: uppercase;
         li {
             display: block;
         }
+    }
+
+    &__card-button {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+
+        button {
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 100%;
+            text-transform: uppercase;
+            padding: 18px 26px;
+            border-color: transparent;
+            border-radius: 25px;
+            background-color: #A8D2F4;
+        }
+    }
+
+    &__card-button-likes {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 3px;
+
+        span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            background-color: #E2E5F2;
+        }
+
     }
 }

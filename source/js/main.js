@@ -11,14 +11,15 @@ import { checkWidth } from './modules/slider.js'
 import { switchingNav } from './modules/nav.js';
 import {openCloseModal} from './modules/modal.js';
 import { openCloseCatalogFilter } from './modules/catalog-filter.js';
+import { openCloseFilterGroup } from './modules/catalog-filter.js';
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
   // Utils
   // ---------------------------------
   openCloseCatalogFilter();
+  openCloseFilterGroup();
   mobileVhFix();
-
   // Modules
   // ---------------------------------
 
