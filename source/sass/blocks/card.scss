@@ -9,10 +9,6 @@
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
     overflow: hidden;
 
-    // ul {
-    //     @include list-reset;
-    // }
-
     @include vp-767 {
         grid-template-rows: 270px 1fr;
         border-radius: 10px;
@@ -93,6 +89,7 @@
     }
 
     &__img-wrapper {
+        width: 285px;
         overflow: hidden;
 
         img {
@@ -132,60 +129,6 @@
         position: absolute;
         top: 17px;
         left: 22px;
-    }
-
-    &__big-circle {
-        position: relative;
-        width: 60px;
-        height: 60px;
-        border-radius: 100%;
-        background-color: black;
-        overflow: hidden;
-        z-index: 0;
-    }
-
-    &__level {
-        position: relative;
-        width: 60px;
-        height: 60px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        border-radius: 50%;
-        z-index: 2;
-        background: conic-gradient(#3498db 0% var(--level), transparent var(--level) 100%);
-    }
-
-    &__circle {
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 54px;
-        height: 54px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        border-radius: 100%;
-        background-color: black;
-        z-index: 2;
-    }
-
-    &__number {
-        font-weight: 700;
-        font-size: 24px;
-        line-height: 100%;
-        line-height: 1;
-        color: $color-default-white;
-    }
-
-    &__label {
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 100%;
-        color: $color-default-white;
-
     }
 
     &__divider {

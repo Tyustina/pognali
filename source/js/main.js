@@ -9,9 +9,10 @@ import './modules/modal.js'
 import './modules/nav.js'
 import { checkWidth } from './modules/slider.js'
 import { switchingNav } from './modules/nav.js';
-import {openCloseModal} from './modules/modal.js';
+import { openCloseModal } from './modules/modal.js';
 import { openCloseCatalogFilter } from './modules/catalog-filter.js';
 import { openCloseFilterGroup } from './modules/catalog-filter.js';
+import { createRangeSlider } from './modules/range-slider.js';
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -20,15 +21,17 @@ window.addEventListener('DOMContentLoaded', () => {
   openCloseCatalogFilter();
   openCloseFilterGroup();
   mobileVhFix();
+  checkWidth();
+  switchingNav();
+  openCloseModal();
+  createRangeSlider();
   // Modules
   // ---------------------------------
 
   // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
   // в load следует добавить скрипты, не участвующие в работе первого экрана
   window.addEventListener('load', () => {
-    checkWidth();
-    switchingNav();
-    openCloseModal();
+
 
     // initModals();
     // uploadFile();

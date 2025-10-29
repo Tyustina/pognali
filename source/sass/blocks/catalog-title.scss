@@ -1,12 +1,15 @@
 .catalog-title {
+    position: relative;
     background-color: $color-midnight-express;
     border-bottom-left-radius: 60px;
     border-bottom-right-radius: 60px;
+    z-index: 3;
 
     &__container {
         position: relative;
         padding-top: 244px;
         padding-bottom: 86px;
+       
 
         &::after {
             position: absolute;

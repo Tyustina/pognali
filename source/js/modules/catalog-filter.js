@@ -1,6 +1,8 @@
-const filterButton = document.querySelector('.countries-filter__button');
-const countriesFilter = document.querySelector('.countries-filter__list');
+const filterButton = document.querySelector('.companions-filter__button');
+const countriesFilter = document.querySelector('.companions-filter__list');
 const form = document.querySelector('.form__wrapper');
+const isDesktop = window.innerWidth > 1023;
+const isMobile = window.innerWidth < 768;
 export function openCloseCatalogFilter() {
     if (filterButton) {
         filterButton.addEventListener('click', clear)
@@ -9,19 +11,21 @@ export function openCloseCatalogFilter() {
 
 export function openCloseFilterGroup() {
     if (form) {
-        const formGroup = form.querySelectorAll('fieldset');
-        formGroup.forEach((group) => {
-            const title = group.querySelector('legend');
-            const list = group.querySelector('.form__accordeon-content')
-            title.addEventListener('click', () => {
-                if (list.classList.contains('is-open')) {
-                    list.classList.remove('is-open')
-                } else {
-                    list.classList.add('is-open')
-                }
+        if (isDesktop || isMobile) {
+            const formGroup = form.querySelectorAll('fieldset');
+            formGroup.forEach((group) => {
+                const title = group.querySelector('legend');
+                const list = group.querySelector('.form__accordeon-content')
+                title.addEventListener('click', () => {
+                    if (list.classList.contains('is-open')) {
+                        list.classList.remove('is-open')
+                    } else {
+                        list.classList.add('is-open')
+                    }
 
+                })
             })
-        })
+        }
     }
 }
 

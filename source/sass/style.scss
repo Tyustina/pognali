@@ -2,6 +2,7 @@
 // ---------------------------------
 
 @import "vendor/normalize";
+@import "vendor/nouislider";
 // Swiper 8.4.7
 // @import "vendor/swiper";
 
@@ -42,8 +43,10 @@
 @import "blocks/interested.scss";
 @import "blocks/map.scss";
 @import "blocks/catalog-title.scss";
-@import "blocks/countries-filter.scss";
-@import "blocks/form.scss"
+@import "blocks/companions-filter.scss";
+@import "blocks/companions-card.scss";
+@import "blocks/form.scss";
+@import "blocks/level.scss";
 
 
 

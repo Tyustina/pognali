@@ -1,0 +1,78 @@
+.level {
+
+    // position: absolute;
+    // top: 17px;
+    // left: 22px;
+
+    &__big-circle {
+        position: relative;
+        width: 60px;
+        height: 60px;
+        border-radius: 100%;
+        background-color: black;
+        overflow: hidden;
+        z-index: 0;
+    }
+
+    &--light {
+        .level__big-circle {
+            background-color: $color-default-white;
+        }
+
+        .level__circle {
+            background-color: $color-default-white;
+        }
+
+        .level__number {
+            color: $color-catalina-blue;
+        }
+
+        .level__label {
+            color: $color-default-black;
+            opacity: 0.4;
+        }
+    }
+
+    &__level {
+        position: relative;
+        width: 60px;
+        height: 60px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        z-index: 2;
+        background: conic-gradient(#3498db 0% var(--level), transparent var(--level) 100%);
+    }
+
+    &__circle {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 54px;
+        height: 54px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 100%;
+        background-color: black;
+        z-index: 2;
+    }
+
+    &__number {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 100%;
+        line-height: 1;
+        color: $color-default-white;
+    }
+
+    &__label {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 100%;
+        color: $color-default-white;
+    }
+}

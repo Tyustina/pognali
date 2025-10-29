@@ -1,0 +1,5 @@
+                from: value => Number(value)
+            }
+        });
+    }
+}

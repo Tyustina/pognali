@@ -7,6 +7,14 @@
   /* stylelint-disable-next-line */
   min-height: calc(100 * var(--vh, 1vh));
 
+  &--catalog {
+    background-color: $color-solitude;
+
+    @include vp-1023 {
+      background-color: $color-default-white;
+    }
+  }
+
   .header,
   .footer {
     flex-shrink: 0;

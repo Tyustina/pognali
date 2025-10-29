@@ -1,17 +1,53 @@
 .form {
     border-radius: 20px;
-    padding: 46px 48px;
+    padding: 45px 46px 49px 48px;
     background-color: #cce5fa;
+
+    @include vp-1023 {
+        padding: 37px 34px 37px 32px;
+    }
+
+    h2 {
+        margin: 0;
+
+        @include vp-1023 {
+            position: relative;
+            font-size: 30px;
+            line-height: 100%;
+            padding-bottom: 38px;
+
+            &::after {
+                display: block;
+                position: absolute;
+                content: "";
+                bottom: 0;
+                left: 0;
+                width: 97%;
+                height: 1px;
+                background-color: #f3c72b;
+            }
+        }
+    }
 
     &__wrapper {
         display: flex;
         flex-direction: column;
         gap: 19px;
 
+        @include vp-1023 {
+            padding-top: 36px;
+            column-gap: 18px;
+            row-gap: 28px;
+        }
 
         fieldset {
             border: none;
             padding: 0;
+
+            @include vp-1023 {
+                display: flex;
+                align-items: center;
+            }
         }
 
         legend {
@@ -23,6 +59,12 @@
             line-height: 110%;
             text-transform: uppercase;
             cursor: pointer;
+
+            @include vp-1023 {
+                width: 95px;
+                float: left;
+                margin-right: 30px;
+            }
         }
 
         label {
@@ -30,6 +72,10 @@
             flex-direction: row-reverse;
             gap: 13px;
             align-items: center;
+
+            @include vp-1023 {
+                gap: 4px;
+            }
         }
     }
 
@@ -43,15 +89,40 @@
             transform: translateY(0);
             opacity: 1;
         }
+
+        @include vp-1023 {
+            display: flex;
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        @include vp-767 {
+            display: none;
+            transform: translateY(-100%);
+            opacity: 0;
+        }
     }
 
     &__options-list {
         @include list-reset;
 
+        @include vp-1023 {
+            display: grid;
+            grid-template-columns: repeat(3, 162px)
+        }
+
         li {
-            display: flex;
-            align-items: center;
+            display: block;
             gap: 13px;
+
+            @include vp-1023 {
+                display: flex;
+                flex-wrap: wrap;
+                width: fit-content;
+                font-size: 20px;
+                line-height: 100%;
+                gap: 12px;
+            }
         }
 
         span {
@@ -95,8 +166,81 @@
             }
         }
     }
-    &__transport-input:checked + span svg {
+
+    &__transport-input:checked+span svg {
         opacity: 1;
     }
 
+    &__range-slider {
+        display: flex;
+        flex-direction: column;
+
+        @include vp-1023 {
+            flex-direction: row-reverse;
+        }
+    }
+
+    &__inputs {
+        max-width: 192px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-top: 20px;
+        border: 1px solid #cbced9;
+        border-radius: 4px;
+        overflow: hidden;
+
+        @include vp-1023 {
+            margin: 0;
+        }
+    }
+
+    &__input-wrapper {
+
+        input {
+            display: flex;
+            text-align: center;
+            width: 100%;
+            border: none;
+            background-color: $color-default-white;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 100%;
+            letter-spacing: 0.04em;
+            padding-top: 15px;
+            padding-bottom: 11px;
+        }
+    }
+
+    button {
+        
+        border: transparent;
+        border-radius: 25px;
+        background-color: $color-default-white;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 100%;
+        text-transform: uppercase;
+        text-align: center;
+        padding-top: 18px;
+        padding-bottom: 14px;
+        padding-left: 14px;
+        padding-right: 14px;
+        color: $color-default-blue;
+
+        @include vp-1023 {
+            position: relative;
+            margin-top: 44px;
+        }
+
+        &::before {
+            display: block;
+            position: absolute;
+            content: "";
+            top: -36px;
+            left: 0;
+            width: 97%;
+            height: 1px;
+            background-color: #f3c72b;
+        }
+    }
 }
