@@ -1,5 +1,5 @@
 .companions-filter {
-    padding-bottom: 200px; //подогнать
+    padding-bottom: 230px;
 
     &__wrapper {
         position: relative;
@@ -12,30 +12,13 @@
             line-height: 100%;
             margin: 0;
         }
-
-        ul {
-            padding-left: 60px;
-            padding-right: 60px;
-
-            button {
-                grid-column: 1/-1;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 17px;
-                background-color: #d6daed;
-                border-radius: 20px;
-                padding: 37px;
-            }
-        }
-
-
     }
 
     &__buttons {
         display: flex;
-        padding-top: 57px;
-        padding-bottom: 80px;
+        padding-top: 60px;
+        padding-bottom: 74px;
+        padding-left: 74px;
 
         @include vp-1023 {
             flex-direction: row-reverse;
@@ -52,11 +35,11 @@
         ul {
             @include list-reset;
             display: flex;
-            gap: 22px;
+            gap: 14px;
 
             @include vp-1023 {
                 gap: 10px;
-                margin-left: 26px;
+                margin-left: -10px;
             }
         }
 
@@ -69,7 +52,7 @@
             line-height: 100%;
             text-transform: uppercase;
             z-index: 10;
-                        cursor: pointer;
+            cursor: pointer;
 
             @include vp-1023 {
                 align-items: center;
@@ -112,22 +95,41 @@
     }
 
     &__list {
-        @include list-reset;
         display: none;
-        grid-template-columns: repeat(5, 1fr);
-        row-gap: 21px;
-        background-color: $color-solitude;
         transform: translateY(-100%);
-        transition: transform 1s ease-in-out opacity 0.5s ease-in-out;
         opacity: 0;
-        padding-bottom: 102px;
-        z-index: 5;
+        transition: transform 1s ease-in-out opacity 0.5s ease-in-out;
+
+
+        button {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 17px;
+            background-color: #d6daed;
+            border: none;
+            border-radius: 20px;
+            padding: 37px;
+        }
     }
 
     &__list.is-open {
-        display: grid;
+        display: block;
         transform: translateY(0);
         opacity: 1;
+        padding-bottom: 148px;
+    }
+
+    &__alphabet-list {
+        @include list-reset;
+        display: grid;
+        grid-template-columns: 17% 16% 19% 17% 22%;
+        column-gap: 30px;
+        grid-template-rows: 648px 500px 448px 498px 308px auto;
+        background-color: $color-solitude;
+        z-index: 5;
+        padding-left: 36px;
     }
 
     &__item {
@@ -163,16 +165,19 @@
         display: flex;
         flex-direction: column;
         gap: 30px;
+
+        @include vp-1023 {
+            gap: 44px;
+        }
     }
 
     &__cards-button {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 17px;
-        margin: 0 auto;
-        padding: 30px;
-        margin-top: 32px;
+        gap: 26px;
+        margin: 38px auto 44px;
+        padding: 28px 72px 27px 24px;
         border: none;
         background-color: transparent;
         font-weight: 700;
@@ -194,12 +199,12 @@
         gap: 86px;
 
         @include vp-1279 {
-            display: flex;
-            
-            gap: 60px;
+            grid-template-columns: 1fr 260px;
+            gap: 40px;
         }
 
         @include vp-1023 {
+            display: flex;
             flex-direction: column-reverse;
         }
     }
@@ -269,6 +274,8 @@
     &__pagination-buttons {
         display: flex;
         margin-left: auto;
+        gap: 18px;
+        margin-top: -2px;
     }
 
     &__pagination-button {
@@ -289,50 +296,5 @@
         @include vp-1023 {
             padding-top: 38px;
         }
-    }
-}
-
-
-#range-slider {
-    background-color: transparent;
-    border: none;
-    margin-top: 10px;
-
-    @include vp-1023 {
-        width: 281px;
-    }
-
-}
-
-.noUi-connects {
-    height: 3px;
-    background: $color-catalina-blue;
-    opacity: 0.2;
-    z-index: 1;
-}
-
-.noUi-target {
-    box-shadow: none;
-    border-radius: 2px;
-    background: $color-catalina-blue;
-}
-
-.noUi-connects>.noUi-connect {
-    background: $color-catalina-blue;
-    opacity: 1;
-    z-index: 5;
-}
-
-.noUi-horizontal .noUi-handle {
-    width: 13px;
-    height: 13px;
-    border: none;
-    border-radius: 100%;
-    box-shadow: none;
-    background-color: $color-catalina-blue;
-
-    &::before,
-    &::after {
-        display: none;
     }
 }

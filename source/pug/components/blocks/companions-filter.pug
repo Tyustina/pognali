@@ -45,14 +45,15 @@ mixin companions-filter()
                         button(type="button") Америка
                     li 
                         button(type="button") Острова
-            .companions-filter__wrapper
-                ul.companions-filter__list.container
-                    each item in alphabetList
-                        li.companions-filter__item
-                            h3= item.letter
-                            ul
-                                each country in item.companions
-                                    li= country
+            .companions-filter__wrapper.container
+                .companions-filter__list
+                    ul.companions-filter__alphabet-list
+                        each item in alphabetList
+                            li.companions-filter__item
+                                h3= item.letter
+                                ul
+                                    each country in item.companions
+                                        li= country
                     button(type="button") 
                         +icon("icon-cross",22,24)
                         span Свернуть
@@ -66,14 +67,9 @@ mixin companions-filter()
                             .companions-card__text
                                 .companions-card__wrapper
                                     h3 Таня Фирсова
-                                    ul.companions-card__hashtags 
-                                        li #ЗОЖ 
-                                        li #ПП 
-                                        li #Фитнес 
-                                        li #пляж
-                                        li #авокадо
-                                        li #смузи
+                                    p.companions-card__hashtags #ЗОЖ #ПП #Фитнес #пляж #авокадо #смузи
                                 .companions-card__counries
+                                    span хочет посетить:
                                     ul
                                         li 
                                             +picture("content","sri-lanka-flag","png",35,24,"")
@@ -107,13 +103,9 @@ mixin companions-filter()
                             .companions-card__text
                                 .companions-card__wrapper
                                     h3 Петя Демин
-                                    ul.companions-card__hashtags 
-                                        li #бургер 
-                                        li #бар 
-                                        li #футбол
-                                        li #концерт
-                                        li #крафт
+                                    p.companions-card__hashtags #бургер #бар #футбол #концерт #крафт
                                 .companions-card__counries
+                                    span хочет посетить:
                                     ul
                                         li 
                                             +picture("content","belgium-flag","png",35,24,"")
@@ -150,13 +142,9 @@ mixin companions-filter()
                             .companions-card__text
                                 .companions-card__wrapper
                                     h3 Марк Смолов
-                                    ul.companions-card__hashtags 
-                                        li #рэп 
-                                        li #тату 
-                                        li #хайпбист
-                                        li #кроссовки
-                                        li #суприм
+                                    p.companions-card__hashtags #рэп #тату #хайпбист #кроссовки #суприм
                                 .companions-card__counries
+                                    span хочет посетить:
                                     ul
                                         li 
                                             +picture("content","usa-flag","png",35,24,"")
@@ -196,12 +184,9 @@ mixin companions-filter()
                             .companions-card__text
                                 .companions-card__wrapper
                                     h3 Лариса Роговая
-                                    ul.companions-card__hashtags 
-                                        li #образование 
-                                        li #карьера 
-                                        li #учеба
-                                        li #линкедин
+                                    ul.companions-card__hashtags #образование #карьера <br> #учеба #линкедин
                                 .companions-card__counries
+                                    span хочет посетить:
                                     ul
                                         li 
                                             +picture("content","britain-flag","png",35,24,"")
@@ -344,11 +329,9 @@ mixin companions-filter()
                             legend Левел
                             .form__accordeon-content.form__range-slider.is-open
                                 .form__inputs 
-                                    .form__input-wrapper
                                         label
-                                            input(type="number" name="input-min" id="input-min" min="0" max="100" value="30")
-                                    .form__input-wrapper
+                                            input(type="number", name="min", id="min-value", min="0", max="100", value="30")
                                         label
-                                            input(type="number" name="input-max" id="input-min" min="0" max="100" value="100")
+                                            input(type="number", name="max", id="max-value", min="0", max="100", value="100")
                                 #range-slider
                         button(type="submit") ПОКАЗАТЬ

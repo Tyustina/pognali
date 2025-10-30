@@ -9,7 +9,6 @@
         position: relative;
         padding-top: 244px;
         padding-bottom: 86px;
-       
 
         &::after {
             position: absolute;
@@ -32,5 +31,10 @@
         color: $color-default-white;
         margin: 0;
         margin-left: 64px;
+
+        @include vp-1023 {
+            font-variant: normal;
+            margin-left: 34px;
+        }
     }
 }
