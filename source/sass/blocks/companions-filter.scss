@@ -1,6 +1,10 @@
 .companions-filter {
     padding-bottom: 230px;
 
+    @include vp-1023 {
+        padding-bottom: 216px;
+    }
+
     &__wrapper {
         position: relative;
         width: 100vw;
@@ -11,6 +15,11 @@
             font-size: 30px;
             line-height: 100%;
             margin: 0;
+        }
+
+        @include vp-1023 {
+            display: grid;
+            grid-template-columns: 1fr 220px;
         }
     }
 
@@ -130,10 +139,15 @@
         background-color: $color-solitude;
         z-index: 5;
         padding-left: 36px;
+
+        @include vp-1023 {
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: auto;
+        }
     }
 
     &__item {
-        position: relative;
+        // position: relative;
         display: flex;
         flex-direction: column;
         row-gap: 30px;
@@ -144,12 +158,21 @@
             line-height: 100%;
             margin: 0;
             text-transform: uppercase;
-
             color: $color-midnight-express;
+
+            @include vp-1023 {
+                opacity: 0.5;
+            }
         }
 
         ul {
             @include list-reset;
+
+            @include vp-1023 {
+                position: absolute;
+                display: none;
+                left: 106%;
+            }
         }
 
         li {
@@ -157,6 +180,19 @@
             font-size: 20px;
             line-height: 150%;
             color: $color-charcoal;
+        }
+    }
+
+    &__item.is-open {
+        @include vp-1023 {
+            h3 {
+                opacity: 1;
+            }
+
+            ul {
+                display: flex;
+                flex-direction: column
+            }
         }
     }
 
@@ -184,6 +220,10 @@
         font-size: 20px;
         line-height: 100%;
         text-transform: uppercase;
+
+        @include vp-1023 {
+            margin: 18px auto 22px;
+        }
     }
 
     &__card {

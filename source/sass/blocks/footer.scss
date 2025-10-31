@@ -68,4 +68,15 @@
       }
     }
   }
+
+  &--catalog {
+
+    svg {
+      @include vp-1023 {
+        width: 111px;
+        height: 21px;
+        left: 24%;
+      }
+    }
+  }
 }

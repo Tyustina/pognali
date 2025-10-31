@@ -72,6 +72,10 @@
                 margin-right: 32px;
                 margin-top: 8px;
             }
+
+            @include vp-767 {
+                float: none;
+            }
         }
 
         label {
@@ -124,6 +128,11 @@
             grid-template-columns: repeat(3, 162px);
             padding-top: 20px;
             padding-bottom: 7px;
+        }
+
+        @include vp-767 {
+            display: flex;
+        flex-direction: column;
         }
 
         li {
@@ -205,6 +214,10 @@
             width: 100%;
             flex-direction: row-reverse;
         }
+
+        @include vp-767 {
+            flex-direction: column;
+        }
     }
 
     &__inputs {
@@ -221,6 +234,11 @@
             margin: 0;
             margin-top: 10px;
             margin-left: auto;
+        }
+
+        @include vp-767 {
+            margin-left: 0;
+            align-self: flex-start;
         }
 
         label {

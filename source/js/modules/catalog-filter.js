@@ -3,9 +3,37 @@ const countriesFilter = document.querySelector('.companions-filter__list');
 const form = document.querySelector('.form__wrapper');
 const isDesktop = window.innerWidth > 1023;
 const isMobile = window.innerWidth < 768;
+const isTablet = window.matchMedia('(min-width: 768px) and (max-width: 1023px)');
 export function openCloseCatalogFilter() {
     if (filterButton) {
         filterButton.addEventListener('click', clear)
+    }
+}
+
+
+function countriesSorter() {
+    if (isTablet) {
+        const accordionList = document.querySelector('.companions-filter__alphabet-list');
+        const filterLetters = accordionList.querySelectorAll('.companions-filter__item h3');
+
+        if (accordionList && accordionList.firstElementChild) {
+            const firstItem = accordionList.firstElementChild;
+            firstItem.classList.add('is-open');
+        }
+        console.log(filterLetters);
+
+        filterLetters.forEach(letter => {
+            letter.addEventListener('click', () => {
+                const currentItem = letter.parentElement;
+
+                if (!currentItem.classList.contains('is-open')) {
+                    const openItem = accordionList.querySelector('.companions-filter__item.is-open');
+                    openItem.classList.remove('is-open');
+                    currentItem.classList.add('is-open');
+                }
+            });
+        })
+
     }
 }
 
@@ -31,11 +59,10 @@ export function openCloseFilterGroup() {
 
 function clear() {
     if (countriesFilter.classList.contains('is-open')) {
-        console.log('Меню закрыли');
         countriesFilter.classList.remove('is-open');
     } else {
-        console.log('Меню открыли');
         countriesFilter.classList.add('is-open');
+        countriesSorter();
     }
 }
 
