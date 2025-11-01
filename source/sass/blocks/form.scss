@@ -7,6 +7,10 @@
         padding: 37px 34px 37px 32px;
     }
 
+    @include vp-767 {
+        padding: 29px 20px 22px 21px;
+    }
+
 
     h2 {
         font-weight: 700;
@@ -18,7 +22,6 @@
         @include vp-1023 {
             position: relative;
             font-size: 30px;
-            line-height: 100%;
             padding-bottom: 38px;
             margin-bottom: 0;
 
@@ -28,10 +31,17 @@
                 content: "";
                 bottom: 0;
                 left: 0;
-                width: 97%;
+                width: 100%;
                 height: 1px;
                 background-color: #f3c72b;
             }
+        }
+
+        @include vp-767 {
+            font-size: 22px;
+            letter-spacing: 0.02em;
+            padding-bottom: 22px;
+            margin-left: 4px;
         }
     }
 
@@ -46,6 +56,10 @@
             row-gap: 0px;
         }
 
+        @include vp-767 {
+            padding: 0;
+        }
+
         fieldset {
             border: none;
             padding: 0;
@@ -53,6 +67,24 @@
             @include vp-1023 {
                 display: flex;
                 align-items: center;
+            }
+
+            @include vp-767 {
+                position: relative;
+                margin: 0;
+                padding: 7px 0;
+                margin-left: 4px;
+
+                &::after(:not(:last-child)) {
+                    display: block;
+                    position: absolute;
+                    content: "";
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 1px;
+                    background-color: #f3c72b;
+                }
             }
         }
 
@@ -76,6 +108,10 @@
 
             @include vp-767 {
                 float: none;
+                font-size: 16px;
+                line-height: 112%;
+                margin: 0;
+                padding-top: 11px;
             }
         }
 
@@ -88,6 +124,10 @@
             @include vp-1023 {
                 gap: 4px;
                 align-items: center;
+            }
+
+            @include vp-767 {
+                gap: 7px;
             }
         }
     }
@@ -133,7 +173,10 @@
 
         @include vp-767 {
             display: flex;
-        flex-direction: column;
+            flex-direction: column;
+            padding-top: 4px;
+            padding-bottom: 10px;
+            gap: 11px;
         }
 
         li {
@@ -150,6 +193,11 @@
                 line-height: 100%;
                 gap: 12px;
             }
+
+            @include vp-767 {
+                font-size: 15px;
+                line-height: 133%;
+            }
         }
 
         span {
@@ -160,6 +208,11 @@
             width: 24px;
             height: 24px;
             background-color: $color-default-white;
+
+            @include vp-767 {
+                width: 18px;
+                height: 18px;
+            }
         }
     }
 
@@ -194,11 +247,25 @@
             height: 44px;
             border-radius: 100%;
 
+            @include vp-767 {
+                width: 32px;
+                height: 32px;
+            }
+
             svg {
                 color: #161C35;
                 opacity: 15%;
                 z-index: 3;
+
+                @include vp-767 {
+                    width: 16px;
+                    width: 16px;
+                }
             }
+        }
+
+        @include vp-767 {
+            margin-left: 1px;
         }
     }
 
@@ -238,6 +305,8 @@
         }
 
         @include vp-767 {
+            max-width: 220px;
+            width: 100%;
             margin-left: 0;
             align-self: flex-start;
         }
@@ -263,6 +332,12 @@
 
         @include vp-1023 {
             padding: 14px 18px 8px;
+        }
+
+        @include vp-767 {
+            font-size: 14px;
+            line-height: 93%;
+            letter-spacing: 0.06em;
         }
     }
 
@@ -297,6 +372,15 @@
             height: 1px;
             background-color: #f3c72b;
         }
+
+        @include vp-767 {
+            margin-top: 0;
+            font-size: 17px;
+            padding-bottom: 8px;
+            &::before {
+                display: none;
+            }
+        }
     }
 
     #range-slider {
@@ -309,6 +393,13 @@
             width: 281px;
             align-self: center;
             margin-left: 16px;
+        }
+
+        @include vp-767 {
+            width: 220px;
+            margin-left: 0;
+            margin-top: 21px;
+            margin-bottom: 0;
         }
     }
 
@@ -344,15 +435,28 @@
         &::after {
             display: none;
         }
+
+        @include vp-767 {
+            width: 10px;
+            height: 10px;
+        }
     }
 
     .noUi-horizontal .noUi-handle-lower {
         right: -14px;
         top: -5px;
+
+        @include vp-767 {
+            right: -11px;
+        }
     }
 
     .noUi-horizontal .noUi-handle-upper {
         right: -3px;
         top: -5px;
+
+         @include vp-767 {
+            right: 0px;
+        }
     }
 }

@@ -81,6 +81,7 @@ mixin companions-filter()
                                             +picture("content","seychelles-flag","png",35,24,"")
                                             p Сейшелы
                                 .companions-card__transport
+                                    span транспорт:
                                     ul
                                         li 
                                             +icon("icon-plane",24,22).is-active
@@ -91,6 +92,7 @@ mixin companions-filter()
                                         li
                                             +icon("icon-run",23,24)
                                 .companions-card__level.level.level--light
+                                    span левел:
                                     .level__big-circle
                                         .level__level(style="--level: 99%;")
                                             .level__circle
@@ -114,6 +116,7 @@ mixin companions-filter()
                                             +picture("content","czech-flag","png",35,24,"")
                                             p Чехия
                                 .companions-card__transport
+                                    span транспорт:
                                     ul
                                         li 
                                             +icon("icon-plane",24,22).is-active
@@ -124,6 +127,7 @@ mixin companions-filter()
                                         li
                                             +icon("icon-run",23,24).is-active
                                 .companions-card__level.level.level--light
+                                    span левел:
                                     .level__big-circle
                                         .level__level(style="--level: 80%;")
                                             .level__circle
@@ -156,6 +160,7 @@ mixin companions-filter()
                                             +picture("content","czech-flag","png",35,24,"")
                                             p Доминика
                                 .companions-card__transport
+                                    span транспорт:
                                     ul
                                         li 
                                             +icon("icon-plane",24,22).is-active
@@ -166,6 +171,7 @@ mixin companions-filter()
                                         li
                                             +icon("icon-run",23,24)
                                 .companions-card__level.level.level--light
+                                    span левел:
                                     .level__big-circle
                                         .level__level(style="--level: 25%;")
                                             .level__circle
@@ -195,6 +201,7 @@ mixin companions-filter()
                                             +picture("content","germany-flag","png",35,24,"")
                                             p Германия
                                 .companions-card__transport
+                                    span транспорт:
                                     ul
                                         li 
                                             +icon("icon-plane",24,22).is-active
@@ -205,6 +212,7 @@ mixin companions-filter()
                                         li
                                             +icon("icon-run",23,24)
                                 .companions-card__level.level.level--light
+                                    span левел:
                                     .level__big-circle
                                         .level__level(style="--level: 25%;")
                                             .level__circle
@@ -234,9 +242,9 @@ mixin companions-filter()
                             a(href="#")
                                 span 4
                     .companions-filter__pagination-buttons 
-                        button(type="button", aria-label="Назад").companions-filter__pagination-button.companions-filter__pagination-button--prev
+                        button(type="button" aria-label="Назад").companions-filter__pagination-button.companions-filter__pagination-button--prev
                             +icon("pagination-arrow",13,20)
-                        button(type="button", aria-label="Вперед").companions-filter__pagination-button.companions-filter__pagination-button--next
+                        button(type="button" aria-label="Вперед").companions-filter__pagination-button.companions-filter__pagination-button--next
                             +icon("pagination-arrow",13,20)
 
             .companions-filter__form 
@@ -329,9 +337,9 @@ mixin companions-filter()
                             legend Левел
                             .form__accordeon-content.form__range-slider.is-open
                                 .form__inputs 
-                                        label
-                                            input(type="number", name="min", id="min-value", min="0", max="100", value="30")
-                                        label
-                                            input(type="number", name="max", id="max-value", min="0", max="100", value="100")
+                                    label
+                                        input(type="number" name="min" id="min-value" min="0" max="100" value="30")
+                                    label
+                                        input(type="number" name="max" id="max-value" min="0" max="100" value="100")
                                 #range-slider
                         button(type="submit") ПОКАЗАТЬ
