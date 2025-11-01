@@ -7,6 +7,7 @@
         padding: 37px 34px 37px 32px;
     }
 
+
     h2 {
         font-weight: 700;
         font-size: 30px;
@@ -307,6 +308,7 @@
         @include vp-1023 {
             width: 281px;
             align-self: center;
+            margin-left: 16px;
         }
     }
 

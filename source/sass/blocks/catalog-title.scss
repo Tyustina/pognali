@@ -5,18 +5,30 @@
     border-bottom-right-radius: 60px;
     z-index: 3;
 
+    @include vp-767 {
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+
     &__container {
         position: relative;
         padding-top: 244px;
         padding-bottom: 86px;
 
+        @include vp-767 {
+            padding-top: 108px;
+            padding-bottom: 24px;
+
+        }
+
         &::after {
             position: absolute;
             bottom: -5px;
-            left: 9vw;
+            bottom: 0px;
+            left: 8vw;
             content: "";
-            width: 288px;
-            height: 8px;
+            width: 164px;
+            height: 4px;
             border-radius: 4px;
             background-color: $color-picton-blue;
         }
@@ -35,6 +47,11 @@
         @include vp-1023 {
             font-variant: normal;
             margin-left: 34px;
+        }
+
+        @include vp-767 {
+            font-size: 36px;
+            margin-left: 0;
         }
     }
 }
