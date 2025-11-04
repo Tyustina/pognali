@@ -64,6 +64,8 @@
             align-items: center;
             border: none;
             background-color: transparent;
+            transition: transform 0.3s ease-in;
+            cursor: pointer;
 
             @include vp-1023 {
                 padding-left: 0;
@@ -75,6 +77,14 @@
                 padding-top: 27px;
                 padding-bottom: 25px;
                 margin: 0;
+            }
+
+            &:hover {
+                transform: scale(1.05);
+
+                span {
+                    background-color: $color-pale-cornflower-blue;
+                }
             }
 
             span {
@@ -375,6 +385,7 @@
             padding-left: 54px;
             padding-right: 40px;
             margin-bottom: 54px;
+
             @include vp-767 {
                 padding-left: 25px;
                 padding-right: 25px;
@@ -440,6 +451,10 @@
                 font-size: 16px;
                 line-height: 150%;
                 padding: 21px 44px;
+            }
+
+            &:hover {
+                background-color: $color-pale-cornflower-blue;
             }
         }
     }

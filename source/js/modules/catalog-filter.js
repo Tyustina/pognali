@@ -60,8 +60,18 @@ export function openCloseFilterGroup() {
 function clear() {
     if (countriesFilter.classList.contains('is-open')) {
         countriesFilter.classList.remove('is-open');
+        filterButton.classList.remove('is-open');
+        if(isMobile) {
+            const filterButtonsList = document.querySelector('.companions-filter__buttons-list');
+            filterButtonsList.classList.remove('is-open')
+        }
     } else {
         countriesFilter.classList.add('is-open');
+        filterButton.classList.add('is-open');
+        if(isMobile) {
+            const filterButtonsList = document.querySelector('.companions-filter__buttons-list');
+            filterButtonsList.classList.add('is-open');
+        }
         countriesSorter();
     }
 }

@@ -1,7 +1,7 @@
 const profileBlock = document.querySelector('.profile')
 const profileModal = document.querySelector('.profile__modal')
 const openModalButton = document.querySelector('.profile__button')
-const closeModalButton = document.querySelector('button')
+const closeModalButton = document.querySelector('.profile__rate button')
 
 export function openCloseModal() {
     if (profileBlock) {

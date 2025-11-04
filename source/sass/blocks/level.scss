@@ -1,9 +1,4 @@
 .level {
-
-    // position: absolute;
-    // top: 17px;
-    // left: 22px;
-
     &__big-circle {
         position: relative;
         width: 60px;
@@ -30,6 +25,10 @@
         .level__label {
             color: $color-default-black;
             opacity: 0.4;
+        }
+
+        .level__level {
+            background: conic-gradient(#ff8d30 0% var(--level), transparent var(--level) 100%);
         }
     }
 

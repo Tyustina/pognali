@@ -93,7 +93,16 @@
             text-decoration: underline;
             text-decoration-skip-ink: none;
             color: $color-pale-cornflower-blue;
+            transition: color 0.3s ease-in;
             cursor: pointer;
+
+            &:hover {
+                color: $color-picton-blue;
+            }
+
+            &:active {
+                opacity: 0.3;
+            }
         }
     }
 
@@ -194,6 +203,8 @@
             display: flex;
             column-gap: 31px;
             align-items: center;
+            color: $color-pale-cornflower-blue;
+            transition: color 0.3s ease-in;
 
             @include vp-1023 {
                 column-gap: 22px;
@@ -224,6 +235,9 @@
             }
 
             svg {
+                color: $color-pale-cornflower-blue;
+                transition: color 0.3s ease-in;
+
                 @include vp-1023 {
                     width: 32px;
                     height: 35px;
@@ -241,13 +255,35 @@
             font-size: 28px;
             line-height: 100%;
             text-transform: uppercase;
-            color: $color-default-white;
+            color: $color-patterns-blue;
             margin: 0;
 
             @include vp-767 {
                 font-size: 16px;
                 line-height: 137%;
             }
+        }
+    }
+
+    &__contacts-link:hover h3 {
+        color: $color-picton-blue;
+    }
+
+    &__contacts-link:hover span {
+        svg {
+            color: $color-picton-blue;
+        }
+    }
+
+    &__contacts-link:active h3 {
+        opacity: 0.3;
+    }
+
+    &__contacts-link:active span {
+        opacity: 0.3;
+
+        svg {
+            opacity: 0.3;
         }
     }
 }

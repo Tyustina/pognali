@@ -26,19 +26,11 @@
         height: 50px;
         border-radius: 50%;
         background-color: $color-jordy-blue;
-        transition: background 0.5s ease;
+        transition: background-color 0.5s ease;
 
         @include vp-1023 {
             width: 45px;
             height: 45px;
-        }
-
-        &:hover {
-            background-color: $color-curious-blue;
-        }
-
-        &:active a {
-            opacity: 0.3;
         }
     }
 
@@ -53,6 +45,16 @@
             gap: 16px;
             justify-content: flex-start;
         }
+
+        &:hover span{
+            background-color: $color-curious-blue;
+        }
+
+        &:active span{
+            svg {
+                opacity: 0.3;
+            }
+        }
     }
 
     p {
@@ -62,7 +64,7 @@
             display: block;
             font-size: 16px;
             line-height: 112%;
-            text-transform:uppercase;
+            text-transform: uppercase;
         }
     }
 }

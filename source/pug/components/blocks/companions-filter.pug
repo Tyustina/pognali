@@ -51,9 +51,10 @@ mixin companions-filter()
                         each item in alphabetList
                             li.companions-filter__item
                                 h3= item.letter
-                                ul
-                                    each country in item.companions
-                                        li= country
+                                .companions-filter__list-wrapper
+                                    ul
+                                        each country in item.companions
+                                            li= country
                     button(type="button") 
                         +icon("icon-cross",22,24)
                         span Свернуть
@@ -253,7 +254,7 @@ mixin companions-filter()
                     form.form__wrapper(action="#" method="post")
                         fieldset
                             legend Хобби
-                                +icon("arrow",10,6)
+                                +icon("form-arrow",10,6)
                             .form__accordeon-content
                                 ul.form__options-list
                                     li 
@@ -273,6 +274,7 @@ mixin companions-filter()
                                                 +icon("icon-check",11,11.3) 
                         fieldset 
                             legend Музыка
+                                +icon("form-arrow",10,6)
                             #music-content.form__accordeon-content.is-open
                                 ul.form__options-list    
                                     li 
@@ -292,6 +294,7 @@ mixin companions-filter()
                                                 +icon("icon-check",11,11.3)
                         fieldset 
                             legend Еда
+                                +icon("form-arrow",10,6)
                             .form__accordeon-content
                                 ul.form__options-list    
                                     li 
@@ -311,6 +314,7 @@ mixin companions-filter()
                                                 +icon("icon-check",11,11.3)
                         fieldset 
                             legend Транспорт
+                                +icon("form-arrow",10,6)
                             .form__accordeon-content.is-open
                                 ul.form__options-list.form__transport-list   
                                     li
@@ -335,6 +339,7 @@ mixin companions-filter()
                                                 +icon("icon-run",23,24)
                         fieldset
                             legend Левел
+                                +icon("form-arrow",10,6)
                             .form__accordeon-content.form__range-slider.is-open
                                 .form__inputs 
                                     label
