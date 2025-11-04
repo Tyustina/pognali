@@ -26,7 +26,9 @@ block main
   main
     .sitemap
       .container
-        +picture("content","logo-full","png", 200, 50, "Логотип")
+        .logo
+          +picture("content","logo-full-bg","png", 187, 50, "Логотип")
+          +icon("logo-mobile", 128, 20)
         h1 Список страниц
         ol
           each page in pages

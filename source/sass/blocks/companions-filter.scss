@@ -121,20 +121,26 @@
                 opacity: 1;
 
                 svg:first-of-type {
-                    margin-top: 2px;
-                    margin-bottom: auto;
+                    @include vp-767 {
+                        margin-top: 2px;
+                        margin-bottom: auto;
+                    }
                 }
 
                 svg:last-of-type {
-                    margin-right: 2px;
-                    margin-top: 4px;
-                    margin-left: auto;
-                    margin-bottom: auto;
+                    @include vp-767 {
+                        margin-right: 2px;
+                        margin-top: 4px;
+                        margin-left: auto;
+                        margin-bottom: auto;
+                    }
                 }
 
                 span:first-of-type {
-                    width: 52%;
-                    text-align: left;
+                    @include vp-767 {
+                        width: 52%;
+                        text-align: left;
+                    }
                 }
             }
 
@@ -247,12 +253,13 @@
 
     &__list.is-open {
         display: grid;
-        grid-template-columns: 1fr 240px;
         transform: translateY(0);
+        transition: transform 0.3s ease-in;
         opacity: 1;
         padding-bottom: 148px;
 
         @include vp-1023 {
+            grid-template-columns: 1fr 240px;
             padding-bottom: 74px;
         }
 

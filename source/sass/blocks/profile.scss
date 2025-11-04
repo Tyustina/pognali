@@ -64,7 +64,7 @@
             align-items: center;
             border: none;
             background-color: transparent;
-            transition: transform 0.3s ease-in;
+            transition: opacity 0.3s ease-in;
             cursor: pointer;
 
             @include vp-1023 {
@@ -80,11 +80,17 @@
             }
 
             &:hover {
-                transform: scale(1.05);
-
-                span {
-                    background-color: $color-pale-cornflower-blue;
+                p {
+                    opacity: 0.7;
                 }
+
+                svg {
+                    opacity: 0.7;
+                }
+            }
+
+            &:active {
+                opacity: 0.3;
             }
 
             span {
@@ -454,7 +460,12 @@
             }
 
             &:hover {
-                background-color: $color-pale-cornflower-blue;
+                background-color: #EDEFF6;
+            }
+
+            &:active {
+                background-color: #EDEFF6;
+                color: #1D2E5B30
             }
         }
     }

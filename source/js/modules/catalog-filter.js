@@ -1,12 +1,13 @@
 const filterButton = document.querySelector('.companions-filter__button');
 const countriesFilter = document.querySelector('.companions-filter__list');
+const countriesFilterButton = document.querySelector('.companions-filter__list button');
 const form = document.querySelector('.form__wrapper');
 const isDesktop = window.innerWidth > 1023;
 const isMobile = window.innerWidth < 768;
 const isTablet = window.matchMedia('(min-width: 768px) and (max-width: 1023px)');
 export function openCloseCatalogFilter() {
     if (filterButton) {
-        filterButton.addEventListener('click', clear)
+        filterButton.addEventListener('click', openCloseFilter)
     }
 }
 
@@ -46,9 +47,11 @@ export function openCloseFilterGroup() {
                 const list = group.querySelector('.form__accordeon-content')
                 title.addEventListener('click', () => {
                     if (list.classList.contains('is-open')) {
-                        list.classList.remove('is-open')
+                        list.classList.remove('is-open');
+                        title.classList.remove('is-open');
                     } else {
-                        list.classList.add('is-open')
+                        list.classList.add('is-open');
+                        title.classList.add('is-open');
                     }
 
                 })
@@ -57,22 +60,34 @@ export function openCloseFilterGroup() {
     }
 }
 
-function clear() {
+function openCloseFilter() {
     if (countriesFilter.classList.contains('is-open')) {
-        countriesFilter.classList.remove('is-open');
-        filterButton.classList.remove('is-open');
-        if(isMobile) {
-            const filterButtonsList = document.querySelector('.companions-filter__buttons-list');
-            filterButtonsList.classList.remove('is-open')
-        }
+        closeFilter();
     } else {
-        countriesFilter.classList.add('is-open');
-        filterButton.classList.add('is-open');
-        if(isMobile) {
-            const filterButtonsList = document.querySelector('.companions-filter__buttons-list');
-            filterButtonsList.classList.add('is-open');
-        }
+        openFilter();
         countriesSorter();
+    }
+
+    countriesFilterButton.addEventListener('click', () => {
+        closeFilter();
+    })
+}
+
+function closeFilter() {
+    countriesFilter.classList.remove('is-open');
+    filterButton.classList.remove('is-open');
+    if (isMobile) {
+        const filterButtonsList = document.querySelector('.companions-filter__buttons-list');
+        filterButtonsList.classList.remove('is-open')
+    }
+}
+
+function openFilter() {
+    countriesFilter.classList.add('is-open');
+    filterButton.classList.add('is-open');
+    if (isMobile) {
+        const filterButtonsList = document.querySelector('.companions-filter__buttons-list');
+        filterButtonsList.classList.add('is-open');
     }
 }
 
