@@ -5,7 +5,6 @@ export function createRangeSlider() {
         const rangeSlider = document.getElementById('range-slider');
         const minValue = document.getElementById('min-value');
         const maxValue = document.getElementById('max-value');
-        console.log('все работает');
 
         noUiSlider.create(rangeSlider, {
             start: [30, 100],
@@ -20,9 +19,6 @@ export function createRangeSlider() {
                 from: value => Number(value)
             }
         });
-
-        console.log(minValue);
-        console.log(maxValue);
 
         rangeSlider.noUiSlider.on('update', (values, handle) => {
             if (handle === 0) {

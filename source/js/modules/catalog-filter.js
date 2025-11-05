@@ -91,3 +91,15 @@ function openFilter() {
     }
 }
 
+export function changeLikesIcon() {
+    const likesButtons = document.querySelectorAll('.companions-card__likes-counter');
+    likesButtons.forEach(el => {
+        el.addEventListener('click', () => {
+            const liked = el.getAttribute('data-liked') === 'true';
+            const count = el.querySelector('p');
+            count.textContent = liked ? +count.textContent - 1 : +count.textContent + 1;
+            el.setAttribute('data-liked', !liked);
+        });
+    });
+}
+

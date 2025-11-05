@@ -38,7 +38,7 @@
 
         @include vp-767 {
             padding-top: 102px;
-        margin-left: 2px;
+            margin-left: 2px;
         }
 
         h2 {
@@ -81,7 +81,7 @@
 
             @include vp-767 {
                 font-size: 14px;
-line-height: 157%;
+                line-height: 157%;
             }
         }
 
@@ -100,9 +100,9 @@ line-height: 157%;
 
             @include vp-767 {
                 font-size: 14px;
-line-height: 157%;
-margin-top: 31px;
-margin-left: -6px;
+                line-height: 157%;
+                margin-top: 31px;
+                margin-left: -6px;
             }
         }
     }
@@ -132,6 +132,15 @@ margin-left: -6px;
                 justify-content: space-between;
                 padding-right: 20px;
             }
+
+            @include vp-767 {
+                gap: 20px;
+            }
+        }
+
+        @include vp-767 {
+            padding-left: 25px;
+            padding-right: 25px;
         }
     }
 

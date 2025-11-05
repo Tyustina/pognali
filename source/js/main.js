@@ -11,8 +11,9 @@ import { checkWidth } from './modules/slider.js'
 import { switchingNav } from './modules/nav.js';
 import { openCloseModal } from './modules/modal.js';
 import { openCloseCatalogFilter } from './modules/catalog-filter.js';
-import { openCloseFilterGroup } from './modules/catalog-filter.js';
+import { openCloseFilterGroup, changeLikesIcon } from './modules/catalog-filter.js';
 import { createRangeSlider } from './modules/range-slider.js';
+import {initEmailValidation} from './modules/form.js';
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -25,6 +26,9 @@ window.addEventListener('DOMContentLoaded', () => {
   switchingNav();
   openCloseModal();
   createRangeSlider();
+  changeLikesIcon();
+  initEmailValidation();
+
   // Modules
   // ---------------------------------
 

@@ -8,7 +8,6 @@
     border-bottom-left-radius: 60px;
     border-bottom-right-radius: 60px;
     margin: 0 auto;
-    outline: 1px solid red;
     z-index: 10;
 
     @include vp-1023 {
@@ -121,7 +120,7 @@
         }
 
         @include vp-767 {
-            width: 270px;
+            width: 100%;
             top: 268px;
             grid-template-columns: 1fr;
             grid-template-rows: 80px 75px 80px 75px;

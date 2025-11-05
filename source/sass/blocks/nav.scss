@@ -62,15 +62,18 @@
     }
 
     &__container {
-        display: flex;
-        align-items: center;
+        
+        display: grid;
+        grid-template-columns: 2fr 1fr;
         gap: 20px;
         background-color: transparent;
 
         @include vp-1023 {
             transform: translateY(-100%);
             opacity: 0;
+            display: flex;
             flex-direction: column;
+            align-items: center;
             position: absolute;
             top: 0;
             left: 0;

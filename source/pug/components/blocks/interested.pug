@@ -3,12 +3,13 @@ section.interested
         h2 Заинтересовались?
         p Зарегистрируйтесь, это быстро и бесплатно! 
         p Уже зарегистрированы? Тогда скорее 
-            a(hreff="#") авторизуйтесь.
+            a(href="#") авторизуйтесь.
         .interested__input-wrapper 
-            input(type="mail" placeholder="E-mail")
+            input(type="email" placeholder="E-mail")
             button.btn(type="button") 
                 span Регистрация
                 +icon("arrow", 14,14)
+            .interested__input-error Неверно введен e-mail 
         p Остались вопросы? Мы с радостью на них ответим!
         .interested__contacts 
             ul 

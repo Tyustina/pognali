@@ -62,7 +62,7 @@ mixin companions-filter()
             .companions-filter__cards
                 ul.companions-filter__cards-list
                     li 
-                        a(href="#").companions-card
+                        a(href="#").companions-card.companions-card--offline
                             .companions-card__img
                                 +picture("content", "user-1", "png", 285,286,"")
                             .companions-card__text
@@ -84,13 +84,13 @@ mixin companions-filter()
                                 .companions-card__transport
                                     span транспорт:
                                     ul
-                                        li 
-                                            +icon("icon-plane",24,22).is-active
-                                        li
+                                        li(data-tooltip="Авиаперелет").is-active
+                                            +icon("icon-plane",24,22)
+                                        li(data-tooltip="Автотранспорт")
                                             +icon("icon-bus",19,20)
-                                        li
+                                        li(data-tooltip="Велосипед")
                                             +icon("icon-bicycle",26,25)
-                                        li
+                                        li(data-tooltip="Пешком")
                                             +icon("icon-run",23,24)
                                 .companions-card__level.level.level--light
                                     span левел:
@@ -100,7 +100,7 @@ mixin companions-filter()
                                                 .level__number 99
                                                     .level__label level
                     li 
-                        a(href="#").companions-card
+                        a(href="#").companions-card.companions-card--offline
                             .companions-card__img
                                 +picture("content", "user-2", "png", 285,285,"")
                             .companions-card__text
@@ -119,14 +119,14 @@ mixin companions-filter()
                                 .companions-card__transport
                                     span транспорт:
                                     ul
-                                        li 
-                                            +icon("icon-plane",24,22).is-active
-                                        li
-                                            +icon("icon-bus",19,20).is-active
-                                        li
+                                        li(data-tooltip="Авиаперелет").is-active
+                                            +icon("icon-plane",24,22)
+                                        li(data-tooltip="Автотранспорт")
+                                            +icon("icon-bus",19,20)
+                                        li(data-tooltip="Велосипед").is-active
                                             +icon("icon-bicycle",26,25)
-                                        li
-                                            +icon("icon-run",23,24).is-active
+                                        li(data-tooltip="Пешком")
+                                            +icon("icon-run",23,24)
                                 .companions-card__level.level.level--light
                                     span левел:
                                     .level__big-circle
@@ -135,13 +135,14 @@ mixin companions-filter()
                                                 .level__number 80
                                                     .level__label level
                                 .companions-card__button 
-                                    button(type="button") Позвать!
-                                    .companions-card__likes-counter 
-                                        span 
+                                    p Позвать!
+                                    .companions-card__likes-counter(data-liked="false")
+                                        span.companions-card__likes-icon
                                             +icon("icon-heart", 15, 15)
+                                            +icon("icon-heart-fill", 15, 15)
                                         p 1500
                     li 
-                        a(href="#").companions-card
+                        a(href="#").companions-card.companions-card--offline
                             .companions-card__img
                                 +picture("content", "user-3", "png", 285,285,"")
                             .companions-card__text
@@ -163,13 +164,13 @@ mixin companions-filter()
                                 .companions-card__transport
                                     span транспорт:
                                     ul
-                                        li 
-                                            +icon("icon-plane",24,22).is-active
-                                        li
+                                        li(data-tooltip="Авиаперелет").is-active
+                                            +icon("icon-plane",24,22)
+                                        li(data-tooltip="Автотранспорт").is-active
                                             +icon("icon-bus",19,20)
-                                        li
-                                            +icon("icon-bicycle",26,25).is-active
-                                        li
+                                        li(data-tooltip="Велосипед")
+                                            +icon("icon-bicycle",26,25)
+                                        li(data-tooltip="Пешком")
                                             +icon("icon-run",23,24)
                                 .companions-card__level.level.level--light
                                     span левел:
@@ -179,19 +180,20 @@ mixin companions-filter()
                                                 .level__number 25
                                                     .level__label level
                                 .companions-card__button 
-                                    button(type="button") Позвать!
-                                    .companions-card__likes-counter 
-                                        span 
+                                    p Позвать!
+                                    .companions-card__likes-counter(data-liked="false")
+                                        span.companions-card__likes-icon
                                             +icon("icon-heart", 15, 15)
+                                            +icon("icon-heart-fill", 15, 15)
                                         p 170
                     li
-                        a(href="#").companions-card
+                        a(href="#").companions-card.companions-card--online
                             .companions-card__img
                                 +picture("content", "user-4", "png", 285,285,"")
                             .companions-card__text
                                 .companions-card__wrapper
                                     h3 Лариса Роговая
-                                    ul.companions-card__hashtags #образование #карьера <br> #учеба #линкедин
+                                    p.companions-card__hashtags #образование #карьера <br> #учеба #линкедин
                                 .companions-card__counries
                                     span хочет посетить:
                                     ul
@@ -204,13 +206,13 @@ mixin companions-filter()
                                 .companions-card__transport
                                     span транспорт:
                                     ul
-                                        li 
-                                            +icon("icon-plane",24,22).is-active
-                                        li
-                                            +icon("icon-bus",19,20).is-active
-                                        li
+                                        li(data-tooltip="Авиаперелет").is-active
+                                            +icon("icon-plane",24,22)
+                                        li(data-tooltip="Автотранспорт").is-active
+                                            +icon("icon-bus",19,20)
+                                        li(data-tooltip="Велосипед")
                                             +icon("icon-bicycle",26,25)
-                                        li
+                                        li(data-tooltip="Пешком").is-active
                                             +icon("icon-run",23,24)
                                 .companions-card__level.level.level--light
                                     span левел:
@@ -220,10 +222,11 @@ mixin companions-filter()
                                                 .level__number 25
                                                     .level__label level
                                 .companions-card__button 
-                                    button(type="button") Позвать!
-                                    .companions-card__likes-counter 
-                                        span 
+                                    p Позвать!
+                                    .companions-card__likes-counter(data-liked="false")
+                                        span.companions-card__likes-icon
                                             +icon("icon-heart", 15, 15)
+                                            +icon("icon-heart-fill", 15, 15)
                                         p 23
                 button(type="button").companions-filter__cards-button 
                     +icon("icon-plus", 26,26)
@@ -258,7 +261,7 @@ mixin companions-filter()
                             .form__accordeon-content
                                 ul.form__options-list
                                     li 
-                                        label(for="hobby1") Спорт
+                                        label(for="hobby1") Спортзал
                                             input(type="checkbox" name="hobby" value="rock" id="hobby1" checked).form__input.visually-hidden
                                             span.form__checkbox-marker
                                                 +icon("icon-check",11,11.3)
@@ -273,13 +276,13 @@ mixin companions-filter()
                                             span.form__checkbox-marker
                                                 +icon("icon-check",11,11.3) 
                         fieldset 
-                            legend Музыка
+                            legend.is-open Музыка
                                 +icon("form-arrow",10,6)
                             #music-content.form__accordeon-content.is-open
                                 ul.form__options-list    
                                     li 
                                         label(for="music1") Тяжелый рок
-                                            input(type="checkbox" name="music" value="rock" id="music1").form__input.visually-hidden
+                                            input(type="checkbox" name="music" value="rock" id="music1" checked).form__input.visually-hidden
                                             span.form__checkbox-marker
                                                 +icon("icon-check",11,11.3)
                                     li 
@@ -299,7 +302,7 @@ mixin companions-filter()
                                 ul.form__options-list    
                                     li 
                                         label(for="food1") Мясоед
-                                            input(type="checkbox" name="food" value="meat" id="food1").form__input.visually-hidden
+                                            input(type="checkbox" name="food" value="meat" id="food1" checked).form__input.visually-hidden
                                             span.form__checkbox-marker
                                                 +icon("icon-check",11,11.3)
                                     li 
@@ -313,7 +316,7 @@ mixin companions-filter()
                                             span.form__checkbox-marker
                                                 +icon("icon-check",11,11.3)
                         fieldset 
-                            legend Транспорт
+                            legend.is-open Транспорт
                                 +icon("form-arrow",10,6)
                             .form__accordeon-content.is-open
                                 ul.form__options-list.form__transport-list   
@@ -338,7 +341,7 @@ mixin companions-filter()
                                             span
                                                 +icon("icon-run",23,24)
                         fieldset
-                            legend Левел
+                            legend.is-open Левел
                                 +icon("form-arrow",10,6)
                             .form__accordeon-content.form__range-slider.is-open
                                 .form__inputs 
