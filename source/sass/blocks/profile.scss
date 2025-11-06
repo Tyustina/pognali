@@ -13,7 +13,10 @@
     }
 
     @include vp-767 {
-        padding-bottom: 25px;
+        padding-bottom: 2px;
+        padding-top: 35px;
+        border-bottom-left-radius: 32px;
+        border-bottom-right-radius: 32px;
     }
 
     &__container {
@@ -34,16 +37,18 @@
             grid-column: 1/-1;
             font-weight: 700;
             font-size: 95px;
-            line-height: 100%;
+            line-height: 97%;
             font-variant: all-small-caps;
             color: $color-midnight-express;
             margin: 0;
+            
             text-align: center;
             margin-left: -38px;
             margin-bottom: 80px;
 
             @include vp-1023 {
-                margin-bottom: 20px;
+                margin-bottom: 24px;
+                margin-left: 2px;
             }
 
             @include vp-767 {
@@ -112,7 +117,7 @@
                 }
             }
 
-            p {
+            span:last-of-type {
                 font-weight: 700;
                 font-size: 20px;
                 line-height: 100%;
@@ -137,8 +142,10 @@
         }
 
         @include vp-767 {
+            padding-top: 6px;
             padding-left: unset;
-            padding-right: 60px;
+            padding-right: 45px;
+            padding-bottom: 36px;
         }
     }
 
@@ -169,6 +176,8 @@
                 font-weight: 400;
                 font-size: 16px;
                 line-height: 100%;
+                padding-top: 14px;
+        padding-bottom: 14px;
             }
         }
 
@@ -250,6 +259,7 @@
             flex-direction: row;
             padding: 16px 18px;
             margin: 0 auto;
+            gap: 46px;
         }
 
         img {
@@ -310,6 +320,12 @@
 
             @include vp-1023 {
                 gap: 10px;
+            }
+
+            @include vp-767 {
+                margin-right: auto;
+                margin-top: 6px;
+                gap: 0;
             }
 
 

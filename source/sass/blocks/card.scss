@@ -1,13 +1,33 @@
 .card {
     position: relative;
     min-height: 483px;
-    width: 285px;
+    max-width: 285px;
     display: grid;
     grid-template-rows: 265px 1fr;
     background-color: $color-default-white;
     border-radius: 21px;
     transition: transform 0.3s ease-in;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    @include vp-1279 {
+        max-width: 250px;
+    }
+
+    @include vp-1089 {
+        max-width: 230px;
+    }
+
+    @include vp-1023 {
+        max-width: 285px;
+    }
+
+
+    @include vp-767 {
+        grid-template-rows: 270px 1fr;
+        border-radius: 10px;
+        width: 270px;
+        overflow: hidden;
+        min-height: unset;
+    }
 
 
     &:hover {
@@ -16,14 +36,6 @@
         img {
             transform: scale(1.05);
         }
-    }
-
-    @include vp-767 {
-        grid-template-rows: 270px 1fr;
-        border-radius: 10px;
-        width: 270px;
-        overflow: hidden;
-        min-height: unset;
     }
 
     &__info {
@@ -164,6 +176,11 @@
         overflow: hidden;
         border-top-left-radius: 21px;
         border-top-right-radius: 21px;
+        overflow: hidden;
+
+        @include vp-1279 {
+            width: 100%;
+        }
 
         @include vp-767 {
             border-radius: 11px;

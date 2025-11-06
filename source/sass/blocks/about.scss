@@ -40,36 +40,47 @@
 
     &__img {
         align-self: flex-end;
+    }
 
+    &__img-desktop img {
+        position: relative;
+        right: 25px;
 
-        picture:first-child img {
-            position: relative;
-            right: 25px;
+        object-fit: cover;
 
-            object-fit: cover;
-
-            @include vp-1023 {
-                display: none;
-            }
-        }
-
-        picture:last-child img {
+        @include vp-1023 {
             display: none;
-
-            @include vp-1023 {
-                display: block;
-                position: absolute;
-                top: 56%;
-                transform: translateY(-50%);
-                right: 8px;
-                z-index: 0;
-            }
-
-            @include vp-767 {
-                display: none;
-            }
         }
     }
+
+    &__img-tablet img {
+        display: none;
+
+        @include vp-1023 {
+            display: block;
+            position: absolute;
+            top: 56%;
+            transform: translateY(-50%);
+            right: 8px;
+            z-index: 0;
+        }
+
+        @include vp-767 {
+            display: none;
+        }
+    }
+
+    &__img-mobile img {
+        display: none;
+
+        @include vp-767 {
+            display: block;
+            position: absolute;
+            bottom: 0;
+            z-index: -1;
+        }
+    }
+
 
     h2 {
         font-weight: 700;
@@ -148,5 +159,4 @@
             padding-bottom: 24px;
         }
     }
-
 }

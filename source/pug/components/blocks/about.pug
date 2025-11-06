@@ -7,7 +7,11 @@ section.about
             button(type="button").btn
                 span Подробнее
                 +icon("arrow", 14,14)
-        .about__img 
-            +picture("content", "about-img-bg","png",655,665,"")
-            +picture("content", "about-img-bg-tab","png",368,546,"")
+        .about__img
+            .about__img-desktop
+                +picture("content", "about-img-bg","png",655,665,"")
+            .about__img-tablet
+                +picture("content", "about-img-bg-tab","png",368,546,"")
+            .about__img-mobile
+                +picture("content", "about-img-bg-mob","png",292,353,"")
 

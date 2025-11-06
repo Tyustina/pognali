@@ -11,10 +11,14 @@
 
     &--light {
         .level__big-circle {
+            width: 45px;
+            height: 45px;
             background-color: $color-default-white;
         }
 
         .level__circle {
+            width: 40px;
+            height: 40px;
             background-color: $color-default-white;
         }
 
@@ -25,9 +29,15 @@
         .level__label {
             color: $color-default-black;
             opacity: 0.4;
+
+            @include vp-1023 {
+                display: none;
+            }
         }
 
         .level__level {
+            width: 45px;
+            height: 45px;
             background: conic-gradient(#ff8d30 0% var(--level), transparent var(--level) 100%);
         }
     }

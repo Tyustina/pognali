@@ -3,7 +3,7 @@ function init() {
     let map = new ymaps.Map('map', {
         center,
         zoom: 17,
-        controls: ['zoomControl', 'typeSelector'],
+        controls: [],
         behaviors: ['drag', 'scrollZoom', 'multiTouch']
     })
     let placemark = new ymaps.Placemark(center, {}, {
@@ -12,16 +12,6 @@ function init() {
         iconImageSize: [56, 56],
         iconImageOffset: [-28, -56]
     });
-
-    // map.controls.add('zoomControl'); // Зум
-    // map.controls.add('typeSelector'); // Смена слоёв
-
-    // map.controls.remove('geolocationControl');
-    // map.controls.remove('searchControl');
-    // map.controls.remove('trafficControl');
-    // // map.controls.remove('typeSelector');
-    // map.controls.remove('fullscreenControl');
-    // map.controls.remove('rulerControl');
 
     map.geoObjects.add(placemark);
 }
