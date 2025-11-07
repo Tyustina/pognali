@@ -13,7 +13,8 @@ import { openCloseModal } from './modules/modal.js';
 import { openCloseCatalogFilter } from './modules/catalog-filter.js';
 import { openCloseFilterGroup, changeLikesIcon } from './modules/catalog-filter.js';
 import { createRangeSlider } from './modules/range-slider.js';
-import {initEmailValidation} from './modules/form.js';
+import { initEmailValidation } from './modules/form.js';
+import { initParallax } from './modules/img-paralax.js';
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -28,7 +29,7 @@ window.addEventListener('DOMContentLoaded', () => {
   createRangeSlider();
   changeLikesIcon();
   initEmailValidation();
-
+  initParallax();
   // Modules
   // ---------------------------------
 

@@ -41,18 +41,18 @@ function initSwiper() {
         });
     }
     const countrySlider = new Swiper(slider, {
-        direction: 'vertical', // Вертикальный слайдер
+        direction: 'vertical', 
         modules: [Mousewheel, Autoplay],
-        loop: true, // Зацикливание слайдов
+        loop: true, 
         slidesPerView: 3,
         slidesPerGroup: 1,
         centeredSlides: true,
-        spaceBetween: 10, // Отступ между слайдами
-        // autoplay: {
-        //     delay: 3000, // Автоматическое пролистывание каждые 3 секунды
-        //     disableOnInteraction: false, // Продолжать автопрокрутку после ручного перелистывания
-        // },
-        grabCursor: true, // Курсор в виде "руки" для захвата
-        mousewheel: true, // Поддержка перелистывания колесом мыши
+        spaceBetween: 10, 
+        autoplay: {
+            delay: 3000, 
+            disableOnInteraction: false, 
+        },
+        grabCursor: true, 
+        mousewheel: true,
     });
 }

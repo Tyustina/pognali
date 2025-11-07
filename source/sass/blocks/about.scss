@@ -6,6 +6,7 @@
     padding-left: 12px;
     border-bottom-left-radius: 60px;
     border-bottom-right-radius: 60px;
+    overflow: hidden;
     z-index: 9;
 
     @include vp-1023 {
