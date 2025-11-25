@@ -34,9 +34,16 @@
             @include vp-1023 {
                 bottom: -4px;
                 left: 10vw;
-                content: "";
                 width: 284px;
                 height: 8px;
+            }
+
+            @include vp-767 {
+                bottom: 0px;
+                left: 8vw;
+                content: "";
+                width: 172px;
+                height: 4px;
             }
         }
 

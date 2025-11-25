@@ -12,6 +12,10 @@
 
   @include vp-767 {
     padding: 35px 0;
+
+    &--catalog {
+      padding: 0;
+    }
   }
 
   &.is-open-nav {
@@ -53,6 +57,7 @@
   &--catalog {
 
     .header {
+
       &__logo:hover {
         opacity: 0.8;
         transition: opacity 0.3s ease-in;
@@ -73,6 +78,11 @@
         @include vp-767 {
           padding-top: 8px;
           padding-bottom: 8px;
+          top: -5px;
+
+          svg {
+            left: 0;
+          }
         }
       }
 
@@ -80,6 +90,11 @@
         @include vp-1023 {
           gap: 178px;
           top: 2px;
+        }
+
+        @include vp-767 {
+          gap: 140px;
+          top: 4px;
         }
       }
 
