@@ -224,11 +224,23 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 17px;
+            gap: 10px;
             background-color: #d6daed;
             border: none;
             border-radius: 20px;
-            padding: 37px;
+            padding: 40px 37px 36px 40px;
+
+            span {
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 100%;
+                text-transform: uppercase;
+            }
+
+            svg {
+                position: relative;
+                left: -10px;
+            }
 
             @include vp-1023 {
                 grid-row: 2 / 3;
@@ -255,7 +267,7 @@
         transform: translateY(0);
         transition: transform 0.3s ease-in;
         opacity: 1;
-        padding-bottom: 148px;
+        padding-bottom: 152px;
 
         @include vp-1023 {
             grid-template-columns: 1fr 240px;
@@ -292,7 +304,6 @@
             margin-bottom: 285px;
             grid-template-columns: repeat(5, min-content);
             grid-template-rows: repeat(5, min-content);
-
         }
     }
 
@@ -393,10 +404,10 @@
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
-        gap: 30px;
+        gap: 32px;
 
         @include vp-1023 {
-            gap: 40px;
+            gap: 38px;
         }
 
         @include vp-767 {
@@ -410,7 +421,7 @@
         justify-content: center;
         gap: 26px;
         color: $color-catalina-blue;
-        margin: 38px auto 44px;
+        margin: 32px auto 44px;
         padding: 28px 72px 27px 24px;
         border: none;
         background-color: transparent;
@@ -429,8 +440,8 @@
 
         @include vp-1023 {
             margin: 18px auto 22px;
-            padding: 28px 72px 27px 82px;
-            gap: 20px;
+            padding: 32px 72px 27px 82px;
+            gap: 24px;
         }
 
         @include vp-767 {
@@ -473,6 +484,10 @@
         @include vp-1023 {
             display: flex;
             flex-direction: column-reverse;
+            gap: 40px;
+        }
+
+        @include vp-767 {
             gap: 26px;
         }
     }
@@ -500,7 +515,11 @@
         gap: 30px;
         background-color: white;
         border-radius: 20px;
-        padding: 26px 36px 24px 29px;
+        padding: 26px 37px 24px 29px;
+
+        @include vp-1023 {
+            padding-right: 30px;
+        }
     }
 
     &__pagination-list {

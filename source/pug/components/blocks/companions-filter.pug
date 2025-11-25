@@ -70,7 +70,6 @@ mixin companions-filter()
                                     h3 Таня Фирсова
                                     p.companions-card__hashtags #ЗОЖ #ПП #Фитнес #пляж #авокадо #смузи
                                 .companions-card__counries
-                                    span хочет посетить:
                                     ul
                                         li 
                                             +picture("content","sri-lanka-flag","png",35,24,"")
@@ -82,7 +81,6 @@ mixin companions-filter()
                                             +picture("content","seychelles-flag","png",35,24,"")
                                             p Сейшелы
                                 .companions-card__transport
-                                    span транспорт:
                                     ul
                                         li(data-tooltip="Авиаперелет").is-active
                                             +icon("icon-plane",24,22)
@@ -93,12 +91,12 @@ mixin companions-filter()
                                         li(data-tooltip="Пешком")
                                             +icon("icon-run",23,24)
                                 .companions-card__level.level.level--light
-                                    span левел:
                                     .level__big-circle
                                         .level__level(style="--level: 99%;")
                                             .level__circle
                                                 .level__number 99
-                                                    .level__label level
+                                                .level__dash
+                                                .level__label level
                     li 
                         a(href="#").companions-card.companions-card--offline
                             .companions-card__img
@@ -108,7 +106,6 @@ mixin companions-filter()
                                     h3 Петя Демин
                                     p.companions-card__hashtags #бургер #бар #футбол #концерт #крафт
                                 .companions-card__counries
-                                    span хочет посетить:
                                     ul
                                         li 
                                             +picture("content","belgium-flag","png",35,24,"")
@@ -117,7 +114,6 @@ mixin companions-filter()
                                             +picture("content","czech-flag","png",35,24,"")
                                             p Чехия
                                 .companions-card__transport
-                                    span транспорт:
                                     ul
                                         li(data-tooltip="Авиаперелет").is-active
                                             +icon("icon-plane",24,22)
@@ -128,14 +124,14 @@ mixin companions-filter()
                                         li(data-tooltip="Пешком")
                                             +icon("icon-run",23,24)
                                 .companions-card__level.level.level--light
-                                    span левел:
                                     .level__big-circle
                                         .level__level(style="--level: 80%;")
                                             .level__circle
                                                 .level__number 80
-                                                    .level__label level
+                                                .level__dash
+                                                .level__label level
                                 .companions-card__button 
-                                    p Позвать!
+                                    button(type="button") Позвать! 
                                     .companions-card__likes-counter(data-liked="false")
                                         span.companions-card__likes-icon
                                             +icon("icon-heart", 15, 15)
@@ -150,7 +146,6 @@ mixin companions-filter()
                                     h3 Марк Смолов
                                     p.companions-card__hashtags #рэп #тату #хайпбист #кроссовки #суприм
                                 .companions-card__counries
-                                    span хочет посетить:
                                     ul
                                         li 
                                             +picture("content","usa-flag","png",35,24,"")
@@ -162,7 +157,6 @@ mixin companions-filter()
                                             +picture("content","czech-flag","png",35,24,"")
                                             p Доминика
                                 .companions-card__transport
-                                    span транспорт:
                                     ul
                                         li(data-tooltip="Авиаперелет").is-active
                                             +icon("icon-plane",24,22)
@@ -173,14 +167,14 @@ mixin companions-filter()
                                         li(data-tooltip="Пешком")
                                             +icon("icon-run",23,24)
                                 .companions-card__level.level.level--light
-                                    span левел:
                                     .level__big-circle
                                         .level__level(style="--level: 25%;")
                                             .level__circle
                                                 .level__number 25
-                                                    .level__label level
+                                                .level__dash
+                                                .level__label level
                                 .companions-card__button 
-                                    p Позвать!
+                                    button(type="button") Позвать! 
                                     .companions-card__likes-counter(data-liked="false")
                                         span.companions-card__likes-icon
                                             +icon("icon-heart", 15, 15)
@@ -195,7 +189,6 @@ mixin companions-filter()
                                     h3 Лариса Роговая
                                     p.companions-card__hashtags #образование #карьера <br> #учеба #линкедин
                                 .companions-card__counries
-                                    span хочет посетить:
                                     ul
                                         li 
                                             +picture("content","britain-flag","png",35,24,"")
@@ -204,7 +197,6 @@ mixin companions-filter()
                                             +picture("content","germany-flag","png",35,24,"")
                                             p Германия
                                 .companions-card__transport
-                                    span транспорт:
                                     ul
                                         li(data-tooltip="Авиаперелет").is-active
                                             +icon("icon-plane",24,22)
@@ -215,14 +207,14 @@ mixin companions-filter()
                                         li(data-tooltip="Пешком").is-active
                                             +icon("icon-run",23,24)
                                 .companions-card__level.level.level--light
-                                    span левел:
                                     .level__big-circle
-                                        .level__level(style="--level: 25%;")
+                                        .level__level(style="--level: 50%;")
                                             .level__circle
-                                                .level__number 25
-                                                    .level__label level
+                                                .level__number 50
+                                                .level__dash
+                                                .level__label level
                                 .companions-card__button 
-                                    p Позвать!
+                                    button(type="button") Позвать! 
                                     .companions-card__likes-counter(data-liked="false")
                                         span.companions-card__likes-icon
                                             +icon("icon-heart", 15, 15)

@@ -24,13 +24,20 @@
         &::after {
             position: absolute;
             bottom: -5px;
-            bottom: 0px;
-            left: 8vw;
+            left: 9%;
             content: "";
-            width: 164px;
-            height: 4px;
+            width: 284px;
+            height: 8px;
             border-radius: 4px;
             background-color: $color-picton-blue;
+
+            @include vp-1023 {
+                bottom: -4px;
+                left: 10vw;
+                content: "";
+                width: 284px;
+                height: 8px;
+            }
         }
 
     }

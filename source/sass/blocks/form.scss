@@ -4,11 +4,11 @@
     background-color: #cce5fa;
 
     @include vp-1023 {
-        padding: 37px 10px 37px 32px;
+        padding: 37px 28px 37px 32px;
     }
 
     @include vp-767 {
-        padding: 29px 20px 22px 21px;
+        padding: 29px 22px 22px 21px;
     }
 
 
@@ -17,7 +17,7 @@
         font-size: 30px;
         line-height: 100%;
         margin: 0;
-        margin-bottom: 38px;
+        margin-bottom: 34px;
 
         @include vp-1023 {
             position: relative;
@@ -42,6 +42,10 @@
             letter-spacing: 0.02em;
             padding-bottom: 22px;
             margin-left: 4px;
+
+            &::after {
+                display: none;
+            }
         }
     }
 
@@ -74,7 +78,7 @@
             @include vp-767 {
                 position: relative;
                 margin: 0;
-                padding: 7px 0;
+                padding: 7px 0 6px 0;
                 margin-left: 4px;
 
                 &::after(:not(:last-child)) {
@@ -129,6 +133,7 @@
 
                 @include vp-767 {
                     display: block;
+                    margin-right: 2px;
                 }
             }
 
@@ -139,11 +144,23 @@
             }
 
             @include vp-767 {
+                width: 100%;
                 float: none;
                 font-size: 16px;
                 line-height: 112%;
                 margin: 0;
                 padding-top: 11px;
+
+                &::before {
+                    display: block;
+                    position: absolute;
+                    content: "";
+                    top: -2px;
+                    left: 0;
+                    width: 100%;
+                    height: 1px;
+                    background-color: #f3c72b;
+                }
             }
         }
 
@@ -153,6 +170,7 @@
             align-items: center;
             gap: 13px;
             justify-content: left;
+            white-space: nowrap;
 
             @include vp-1023 {
                 gap: 12px;
@@ -194,24 +212,22 @@
         @include list-reset;
         display: flex;
         flex-direction: column;
-        gap: 14px;
-        padding-top: 24px;
-        padding-bottom: 14px;
+        gap: 16px;
+        padding: 26px 0 11px;
 
         @include vp-1023 {
             width: 100%;
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            padding-top: 16px;
-            padding-bottom: 7px;
+            grid-template-columns: repeat(3, 156px);
+            padding-top: 22px;
+            padding-bottom: 5px;
         }
 
         @include vp-767 {
             display: flex;
-            flex-direction: column;
-            padding-top: 4px;
-            padding-bottom: 10px;
-            gap: 11px;
+            padding-top: 6px;
+            padding-bottom: 12px;
+            gap: 10px;
         }
 
         li {
@@ -247,6 +263,8 @@
     }
 
     &__checkbox-marker {
+        position: relative;
+        bottom: 4px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -311,6 +329,7 @@
 
         @include vp-767 {
             margin-left: 1px;
+            padding-bottom: 14px;
         }
     }
 
@@ -340,10 +359,11 @@
         @include vp-1023 {
             width: 100%;
             display: grid;
-            // flex-direction: row-reverse;
+            flex-direction: row-reverse;
         }
 
         @include vp-767 {
+            width: fit-content;
             flex-direction: column;
         }
     }
@@ -386,9 +406,7 @@
 
         @include vp-1023 {
             max-width: 148px;
-            margin: 0;
-            margin-top: 10px;
-            margin-left: auto;
+            margin: 10px 8px 0 auto;
         }
 
         @include vp-767 {
@@ -396,6 +414,7 @@
             width: 100%;
             margin-left: 0;
             align-self: flex-start;
+            
         }
 
         label {
@@ -433,9 +452,11 @@
         }
 
         @include vp-767 {
+            width: 100%;
             font-size: 14px;
             line-height: 93%;
             letter-spacing: 0.06em;
+            padding-top: 8px;
         }
     }
 
@@ -468,6 +489,8 @@
         @include vp-1023 {
             position: relative;
             margin-top: 68px;
+            margin-right: 10px;
+            margin-left: 4px;
         }
 
         &::before {
@@ -482,9 +505,12 @@
         }
 
         @include vp-767 {
-            margin-top: 19px;
+            margin-top: 3px;
+            margin-right: 0;
+            margin-left: 0;
             font-size: 17px;
-            padding-bottom: 8px;
+            padding-top: 16px;
+            padding-bottom: 10px;
 
             &::before {
                 display: none;
@@ -501,12 +527,10 @@
         @include vp-1023 {
             width: 281px;
             align-self: center;
-            margin-left: 16px;
         }
 
         @include vp-767 {
             width: 220px;
-            margin-left: 0;
             margin-top: 21px;
             margin-bottom: 0;
         }

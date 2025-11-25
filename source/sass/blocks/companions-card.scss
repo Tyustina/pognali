@@ -31,7 +31,7 @@
         grid-template-rows: 70px minmax(18px, auto) minmax(42px, auto) minmax(38px, auto) 36px;
         column-gap: 16px;
         row-gap: 12px;
-        padding: 16px 17px 24px;
+        padding: 16px 10px 30px 17px;
     }
 
     &__img {
@@ -160,9 +160,14 @@
         height: 8px;
         top: 50%;
         transform: translateY(-50%);
-        right: -30px;
+        left: -26px;
         border-radius: 100%;
         background-color: #F97676;
+
+        @include vp-1023 {
+            left: unset;
+            right: -30px;
+        }
 
         @include vp-767 {
             right: -76%;
@@ -179,7 +184,7 @@
         color: $color-catalina-blue;
 
         @include vp-1023 {
-            width: 74%;
+            width: 70%;
             margin-left: 2px;
         }
 
@@ -199,9 +204,11 @@
         grid-column: 2/4;
         grid-row: 1/2;
         margin-top: 5px;
+        margin-left: 2px;
         color: $color-catalina-blue;
 
         @include vp-1023 {
+            margin-top: 7px;
             grid-column: 1/4;
             grid-row: 2/3;
             bottom: 0;
@@ -214,17 +221,6 @@
             margin-left: 9px;
         }
 
-        span {
-            display: none;
-
-            @include vp-767 {
-                display: block;
-                font-weight: 400;
-                font-size: 14px;
-                line-height: 114%;
-            }
-        }
-
         ul {
             @include list-reset;
             display: flex;
@@ -233,14 +229,54 @@
 
 
             @include vp-1023 {
+                position: relative;
                 flex-direction: row;
-                gap: 10px;
-                padding-top: 14px;
+                gap: 14px;
+                padding-top: 40px;
             }
 
             @include vp-767 {
                 flex-direction: column;
                 gap: 9px;
+                padding-top: 32px;
+            }
+
+            &::before {
+                @include vp-1023 {
+                    position: absolute;
+                    content: "хочет посетить:";
+                    top: 2px;
+                    left: 7%;
+                    font-size: 16px;
+                    line-height: 114%;
+                    padding-left: 4px;
+                    padding-right: 2px;
+                    background-color: $color-default-white;
+                    z-index: 2;
+                }
+
+                @include vp-767 {
+                    top: -3px;
+                    left: -4%;
+                    font-size: 14px;
+                }
+            }
+
+            &::after {
+                @include vp-1023 {
+                    position: absolute;
+                    content: "";
+                    top: 11px;
+                    left: -30%;
+                    width: 150%;
+                    height: 1px;
+                    background-color: $color-default-black;
+                }
+
+                @include vp-767 {
+                    top: 4px;
+                    width: 300%;
+                }
             }
         }
 
@@ -255,7 +291,7 @@
             }
 
             @include vp-1023 {
-                gap: 15px;
+                gap: 12px;
                 align-items: end;
             }
 
@@ -339,7 +375,7 @@
         grid-column: 2/3;
         grid-row: 2/-1;
         margin-top: auto;
-        padding: 10px 2px;
+        padding: 14px 0;
         color: $color-catalina-blue;
 
         @include vp-1023 {
@@ -351,12 +387,37 @@
         }
 
         @include vp-767 {
+            position: relative;
             display: flex;
             flex-direction: column;
             grid-column: 1/3;
             grid-row: 4/5;
             margin: 0;
             margin-left: 8px;
+
+            &::before {
+                position: absolute;
+                content: "транспорт:";
+                top: 2px;
+                left: -4px;
+                font-size: 14px;
+                line-height: 114%;
+                padding-left: 4px;
+                padding-right: 2px;
+                background-color: $color-default-white;
+                z-index: 2;
+            }
+
+            &::after {
+                position: absolute;
+                content: "";
+                top: 11px;
+                left: -30%;
+                width: 150%;
+                height: 1px;
+                background-color: $color-default-black;
+
+            }
         }
 
         span {
@@ -375,17 +436,17 @@
             @include list-reset;
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 0;
 
             @include vp-1023 {
                 flex-direction: column;
-                gap: 0;
+
             }
 
             @include vp-767 {
                 flex-direction: row;
                 gap: 1px;
-                margin-top: 16px;
+                margin-top: 32px;
                 margin-left: -4px;
             }
         }
@@ -398,7 +459,6 @@
             width: 32px;
             height: 32px;
             border-radius: 100%;
-            background-color: #EDEFF6;
 
             &.is-active {
                 svg {
@@ -472,7 +532,6 @@
         }
 
         @include vp-767 {
-
             display: grid;
             gap: 10px;
             grid-column: 3/4;
@@ -498,12 +557,14 @@
         grid-row: 2/-1;
         display: flex;
         flex-wrap: wrap;
-        align-items: center;
+        align-items: flex-end;
         gap: 4px;
+        padding: 0;
         margin-top: auto;
         margin-left: -8px;
+        margin-bottom: 4px;
 
-        p:first-child {
+        button {
             font-weight: 700;
             font-size: 20px;
             line-height: 100%;
@@ -581,6 +642,13 @@
                 }
             }
         }
+
+        p {
+            font-size: 20px;
+            line-height: 20px;
+            margin: 0;
+            padding: 0;
+        }
     }
 
     &__likes-icon {
@@ -607,53 +675,45 @@
                 height: 20px;
             }
         }
+    }
 
-        p {
-            font-size: 20px;
-            line-height: 20px;
-            margin: 0;
+    [data-liked='true'] .companions-card__likes-icon {
+        background-color: #F9EAEA;
+
+        &:hover {
+            background-color: #F9D8D8;
         }
-    }
 
+        &:active {
+            opacity: 0.3;
+        }
 
-}
-
-[data-liked='true'] .companions-card__likes-icon {
-    background-color: #F9EAEA;
-
-    &:hover {
-        background-color: #F9D8D8;
-    }
-
-    &:active {
-        opacity: 0.3;
-    }
-
-    svg:first-child {
-        opacity: 0;
-    }
-
-    svg:last-child {
-        opacity: 1;
-    }
-}
-
-[data-liked='false'] .companions-card__likes-icon {
-    &:hover {
         svg:first-child {
+            opacity: 0;
+        }
+
+        svg:last-child {
             opacity: 1;
         }
     }
 
-    &:active {
-        opacity: 0.1;
-    }
+    [data-liked='false'] .companions-card__likes-icon {
+        &:hover {
+            svg:first-child {
+                opacity: 1;
+            }
+        }
 
-    svg:first-child {
-        opacity: 0.3;
-    }
+        &:active {
+            opacity: 0.1;
+        }
 
-    svg:last-child {
-        opacity: 0;
+        svg:first-child {
+            opacity: 0.3;
+        }
+
+        svg:last-child {
+            opacity: 0;
+        }
     }
 }
