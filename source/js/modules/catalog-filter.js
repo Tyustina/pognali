@@ -53,7 +53,6 @@ export function openCloseFilterGroup() {
                         list.classList.add('is-open');
                         title.classList.add('is-open');
                     }
-
                 })
             })
         }

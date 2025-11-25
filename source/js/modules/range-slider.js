@@ -33,7 +33,7 @@ export function createRangeSlider() {
             if (value >= 0 && value <= 100) {
                 rangeSlider.noUiSlider.set([value, null]);
             } else {
-                this.value = rangeSlider.noUiSlider.get()[0];  // Восстановить, если значение некорректно
+                this.value = rangeSlider.noUiSlider.get()[0];
             }
         });
 
@@ -42,7 +42,7 @@ export function createRangeSlider() {
             if (value >= 0 && value <= 100) {
                 rangeSlider.noUiSlider.set([null, value]);
             } else {
-                this.value = rangeSlider.noUiSlider.get()[1];  // Восстановить, если значение некорректно
+                this.value = rangeSlider.noUiSlider.get()[1];
             }
         });
     }

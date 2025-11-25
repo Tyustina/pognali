@@ -241,6 +241,7 @@
         ul {
             @include list-reset;
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             grid-template-columns: max-content max-content;
             gap: 107px;

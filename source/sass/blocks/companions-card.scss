@@ -103,6 +103,7 @@
             font-weight: 700;
             font-size: 30px;
             line-height: 100%;
+            color: $color-catalina-blue;
             margin: 0;
             margin-bottom: 20px;
             cursor: pointer;
@@ -175,6 +176,7 @@
         font-size: 20px;
         line-height: 115%;
         margin: 0;
+        color: $color-catalina-blue;
 
         @include vp-1023 {
             width: 74%;
@@ -197,7 +199,7 @@
         grid-column: 2/4;
         grid-row: 1/2;
         margin-top: 5px;
-
+        color: $color-catalina-blue;
 
         @include vp-1023 {
             grid-column: 1/4;
@@ -338,6 +340,7 @@
         grid-row: 2/-1;
         margin-top: auto;
         padding: 10px 2px;
+        color: $color-catalina-blue;
 
         @include vp-1023 {
             grid-column: 3/4;

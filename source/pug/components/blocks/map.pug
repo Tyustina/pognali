@@ -1,15 +1,15 @@
 section.map
     h2.visually-hidden Как добраться
-    .map__content
-        .map__address
-            span 
-                +icon("icon-pin",42,42)
-            p ул. Большая Конюшенная, 19/8
-        button(type="button").btn.map__btn
-            span Проложить маршрут
-            +icon("arrow", 14,14)
-    .map__wrapper
-        .map__img
-            +picture("content", "map", "jpg", 1440, 584,"Карта")
-        #map
+    .map__content-wrapper
+        .map__content
+            .map__address
+                span 
+                    +icon("icon-pin",42,42)
+                p ул. Большая Конюшенная, 19/8
+            button(type="button").btn.map__btn
+                span Проложить маршрут
+                +icon("arrow", 14,14)
+    .map__wrapper(id="map")
+        +picture("content", "map", "jpg", 1440, 584,"Карта")
+        
 

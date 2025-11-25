@@ -41,7 +41,8 @@ html(lang="ru")
 
       if (hasFooter)
         +footer(footerMods)
-
+      +modal
+      .overlay
     block modals
     script(src='https://api-maps.yandex.ru/2.1/?apikey=01b7e337-a5f9-4a4f-8c08-e1331c3927b9&lang=ru_RU' type='text/javascript')
     script(src="js/vendor.min.js")

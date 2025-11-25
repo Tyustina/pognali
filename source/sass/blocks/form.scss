@@ -4,7 +4,7 @@
     background-color: #cce5fa;
 
     @include vp-1023 {
-        padding: 37px 34px 37px 32px;
+        padding: 37px 10px 37px 32px;
     }
 
     @include vp-767 {
@@ -65,7 +65,9 @@
             padding: 0;
 
             @include vp-1023 {
-                display: flex;
+                // display: flex;
+                display: grid;
+                grid-template-columns: 126px 1fr;
                 align-items: center;
             }
 
@@ -133,7 +135,6 @@
             @include vp-1023 {
                 width: 95px;
                 float: left;
-                margin-right: 32px;
                 margin-top: 8px;
             }
 
@@ -154,7 +155,7 @@
             justify-content: left;
 
             @include vp-1023 {
-                gap: 4px;
+                gap: 12px;
                 align-items: center;
             }
 
@@ -170,7 +171,8 @@
         opacity: 0;
 
         @include vp-1023 {
-            display: flex;
+            width: 100%;
+            display: grid;
             transform: translateY(0);
             opacity: 1;
         }
@@ -197,9 +199,10 @@
         padding-bottom: 14px;
 
         @include vp-1023 {
+            width: 100%;
             display: grid;
-            grid-template-columns: repeat(3, 162px);
-            padding-top: 20px;
+            grid-template-columns: repeat(3, 1fr);
+            padding-top: 16px;
             padding-bottom: 7px;
         }
 
@@ -217,6 +220,7 @@
             line-height: 100%;
             gap: 13px;
             transition: opacity 0.3s ease-in;
+            cursor: pointer;
 
             @include vp-1023 {
                 display: flex;
@@ -240,24 +244,23 @@
                 opacity: 0.3;
             }
         }
-
-        span {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 4px;
-            width: 24px;
-            height: 24px;
-            background-color: $color-default-white;
-
-            @include vp-767 {
-                width: 18px;
-                height: 18px;
-            }
-        }
     }
 
     &__checkbox-marker {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        width: 24px;
+        height: 24px;
+        background-color: $color-default-white;
+        cursor: pointer;
+
+        @include vp-767 {
+            width: 18px;
+            height: 18px;
+        }
+
         svg {
             display: none;
         }
@@ -287,6 +290,7 @@
             width: 44px;
             height: 44px;
             border-radius: 100%;
+            cursor: pointer;
 
             @include vp-767 {
                 width: 32px;
@@ -311,6 +315,8 @@
     }
 
     &__transport-list li {
+        cursor: pointer;
+
         &:hover {
             span {
                 box-shadow: 0 2px 6px 0 rgba(22, 28, 53, 0.17);
@@ -333,7 +339,8 @@
 
         @include vp-1023 {
             width: 100%;
-            flex-direction: row-reverse;
+            display: grid;
+            // flex-direction: row-reverse;
         }
 
         @include vp-767 {
@@ -412,7 +419,7 @@
         transition: border-color 0.3s ease-in;
         border: 1px solid #cbced9;
 
-        &:hover:not(.form__transport-input){
+        &:hover:not(.form__transport-input) {
             border-color: #959BB2;
         }
 
@@ -421,6 +428,7 @@
         }
 
         @include vp-1023 {
+            width: auto;
             padding: 14px 18px 8px;
         }
 
@@ -446,6 +454,7 @@
         padding-left: 14px;
         padding-right: 14px;
         color: $color-default-blue;
+        cursor: pointer;
 
         &:hover {
             box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.14);
@@ -529,6 +538,7 @@
         box-shadow: none;
         background-color: $color-catalina-blue;
         transition: transform 0.5s ease-in-out;
+        cursor: pointer;
 
         &:hover {
             transform: scale(1.5);
