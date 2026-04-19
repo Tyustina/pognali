@@ -291,6 +291,7 @@
         display: grid;
         grid-template-columns: 17% 16% 19% 17% 22%;
         column-gap: 30px;
+        row-gap: 15px;
         grid-template-rows: 648px 500px 448px 498px 308px auto;
         background-color: $color-solitude;
         z-index: 5;

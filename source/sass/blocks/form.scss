@@ -105,7 +105,7 @@
             line-height: 110%;
             text-transform: uppercase;
             z-index: 5;
-            transition: opacity 0.3s ease-in transform 0.3s ease-in;
+            transition: all 0.3s ease-in;
             cursor: pointer;
 
             &:hover {
@@ -214,6 +214,7 @@
         flex-direction: column;
         gap: 16px;
         padding: 26px 0 11px;
+        cursor: pointer;
 
         @include vp-1023 {
             width: 100%;
@@ -334,9 +335,20 @@
     }
 
     &__transport-list li {
+        transition: all 0.3s ease-in;
         cursor: pointer;
 
-        &:hover {
+        span {
+            transition: all 0.3s ease-in;
+        }
+
+        svg {
+            transition: all 0.3s ease-in;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
             span {
                 box-shadow: 0 2px 6px 0 rgba(22, 28, 53, 0.17);
             }
@@ -414,11 +426,12 @@
             width: 100%;
             margin-left: 0;
             align-self: flex-start;
-            
+
         }
 
         label {
             align-items: normal;
+            cursor: pointer;
         }
     }
 
@@ -475,6 +488,7 @@
         padding-left: 14px;
         padding-right: 14px;
         color: $color-default-blue;
+        transition: all 0.3s ease-in;
         cursor: pointer;
 
         &:hover {
